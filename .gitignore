@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+._*
+
+# 本地配置与凭据
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+
+# 依赖、构建产物与本地缓存
+node_modules/
+dist/
+.wrangler/
+
+# 编辑器与日志
+.idea/
+.vscode/
+*.log
