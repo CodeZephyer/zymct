@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <meta name="description" content="ZYMCT - 流畅安全的致月生态矩阵">
-  <meta name="theme-color" content="#03050a">
+  <meta name="theme-color" content="#f8fafc">
   
   <!-- Cloudflare 底层网络优化 -->
   <link rel="dns-prefetch" href="https://yejzzy.com">
@@ -821,9 +821,12 @@
         </div>
 
         <div class="card-actions" style="margin-top: 24px; justify-content: center;">
-          <a href="https://link3.cc/zymct" target="_blank" rel="noopener" class="action-btn primary">
+          <a href="./about/index.html" class="action-btn primary">
+            <span data-i18n="about_btn_author">认识作者</span>
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19a6 6 0 0 0-12 0m6-8a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm6-2 2 2 4-4"></path></svg>
+          </a>
+          <a href="https://link3.cc/zymct" target="_blank" rel="noopener" class="action-btn secondary">
             <span data-i18n="about_btn_link3">前往 Link3 官网</span>
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </a>
         </div>
       </div>
@@ -887,18 +890,20 @@
 
   <script>
     // =========================================
-    // 智能日夜交替系统
+    // 明暗主题系统
     // =========================================
     const themeToggleLogo = document.getElementById('themeToggleLogo');
     const footerLogoImg = document.getElementById('footerLogo');
-    let currentTheme = localStorage.getItem('zymct_theme') || 'dark';
+    const themeStorageKey = 'zymct_theme_preference';
+    let currentTheme = localStorage.getItem(themeStorageKey) || 'light';
 
     const bottomLogoWhite = "https://vip.123pan.cn/1812579799/yk6baz03t0m000dc5iqel5gqt5zuzavpDIYPDqJ0BIU2BGxzDwU0.png";
     const bottomLogoBlack = "https://vip.123pan.cn/1812579799/ymjew503t0l000dc5csd5b1yf2vgrgfzDIYPDqJ0BIU2BGxzDwU0.png";
 
     function applyTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('zymct_theme', theme);
+      localStorage.setItem(themeStorageKey, theme);
+      document.querySelector('meta[name="theme-color"]').content = theme === 'light' ? '#f8fafc' : '#03050a';
       if (theme === 'light') {
         footerLogoImg.src = bottomLogoBlack;
       } else {
@@ -1068,6 +1073,7 @@
         about_title: "致月云科技 (MoonCloud)",
         about_desc: "始于 2021 年的创新科技工作室，由一位预科生创立。",
         about_notice: "系统公告：官方主页与介绍文档正从飞书全面迁移至 Notion，敬请耐心等待新版发布。",
+        about_btn_author: "认识作者",
         about_btn_link3: "前往 Link3 官网",
         footer_cf: "全球网络由 Cloudflare 强力驱动",
         peace_text: "愿世界和平 · Peace & Love"
@@ -1118,6 +1124,7 @@
         about_title: "MoonCloud Technology",
         about_desc: "An innovative tech studio founded in 2021 by a prep student.",
         about_notice: "Announcement: Official docs are migrating from Feishu to Notion. Please stay tuned.",
+        about_btn_author: "Meet the Creator",
         about_btn_link3: "Visit Link3 Profile",
         footer_cf: "Global Network Powered by Cloudflare",
         peace_text: "World Peace · Peace & Love"

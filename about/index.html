@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="认识 ZYMCT 与致月云科技背后的学生创作者。">
+  <meta name="theme-color" content="#f5f3ee">
+  <title>关于作者 · ZYMCT</title>
+  <link rel="preconnect" href="https://vip.123pan.cn" crossorigin>
+  <link rel="preload" as="image" href="../assets/apple-avatar.png">
+  <link rel="preload" as="image" href="https://vip.123pan.cn/1812579799/yk6baz03t0l000dc5iqel5gy6yzv0pvaDIYPDqJ0BIU2BGxzDwU0.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f4f5f8;
+      --surface: #ffffff;
+      --surface-soft: #eceef3;
+      --ink: #17171c;
+      --muted: #656570;
+      --faint: #92929d;
+      --line: #d9dbe3;
+      --line-strong: #b9bdc9;
+      --purple: #7559b7;
+      --blue: #2476d9;
+      --green: #148678;
+      --coral: #d6554c;
+      --yellow: #a87500;
+      --shadow: rgba(35, 33, 48, 0.13);
+      --header: rgba(244, 245, 248, 0.88);
+      --radius: 8px;
+      --max-width: 1180px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --page: #0c0c10;
+      --surface: #15151b;
+      --surface-soft: #1d1d24;
+      --ink: #f3f3f6;
+      --muted: #aaaab5;
+      --faint: #747480;
+      --line: #2b2b34;
+      --line-strong: #464651;
+      --purple: #a68ae3;
+      --blue: #72adf5;
+      --green: #5dd4c2;
+      --coral: #ff887d;
+      --yellow: #edc75b;
+      --shadow: rgba(0, 0, 0, 0.38);
+      --header: rgba(12, 12, 16, 0.88);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      background: var(--page);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.35s ease, color 0.35s ease;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 56px 56px;
+      opacity: 0.22;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0 auto 0 0;
+      z-index: -1;
+      width: 6px;
+      background: var(--purple);
+      box-shadow: 6px 0 0 var(--blue), 12px 0 0 var(--coral), 18px 0 0 var(--green);
+      opacity: 0.82;
+      pointer-events: none;
+    }
+
+    a { color: inherit; }
+    button { font: inherit; color: inherit; letter-spacing: 0; }
+    img, svg { display: block; }
+    img { max-width: 100%; }
+
+    :focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    ::selection { background: var(--purple); color: #fff; }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 30px;
+      z-index: 2000;
+      transform: translateY(-160%);
+      padding: 9px 13px;
+      border-radius: 5px;
+      background: var(--ink);
+      color: var(--page);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .shell {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      border-bottom: 1px solid transparent;
+      background: transparent;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .topbar.is-scrolled {
+      border-color: var(--line);
+      background: var(--header);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .topbar-inner {
+      min-height: 76px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .brand {
+      justify-self: start;
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 50px;
+      height: 32px;
+      object-fit: contain;
+      filter: invert(1);
+    }
+
+    [data-theme="dark"] .brand img { filter: none; }
+
+    .brand-name { display: grid; line-height: 1.15; }
+    .brand-name strong { font-size: 0.88rem; }
+    .brand-name span { margin-top: 4px; color: var(--muted); font-size: 0.75rem; }
+
+    .page-label {
+      justify-self: center;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .top-actions {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-button,
+    .lang-button {
+      height: 42px;
+      min-width: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--ink);
+      cursor: pointer;
+      box-shadow: 0 6px 20px transparent;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .icon-button:hover,
+    .lang-button:hover {
+      transform: translateY(-2px);
+      border-color: var(--line-strong);
+      box-shadow: 0 8px 22px var(--shadow);
+    }
+
+    .icon-button svg { width: 18px; height: 18px; }
+    .lang-button { padding: 0 12px; font-size: 0.78rem; font-weight: 800; }
+
+    .hero {
+      min-height: 92svh;
+      display: grid;
+      align-items: center;
+      padding: 124px 0 70px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.94fr) minmax(440px, 1.06fr);
+      gap: 76px;
+      align-items: center;
+    }
+
+    .hero-copy { position: relative; z-index: 3; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 20px;
+      color: var(--purple);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    h1, h2, h3, p { overflow-wrap: anywhere; }
+
+    h1 {
+      margin: 0;
+      max-width: 620px;
+      font-size: 4.8rem;
+      line-height: 1.04;
+      font-weight: 860;
+      letter-spacing: 0;
+    }
+
+    .hero-lead {
+      max-width: 610px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.85;
+    }
+
+    .hero-lead strong { color: var(--ink); font-weight: 680; }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .button {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 10px 16px;
+      border: 1px solid var(--line-strong);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .button:hover { transform: translateY(-3px); border-color: var(--ink); box-shadow: 0 10px 24px var(--shadow); }
+    .button svg { width: 17px; height: 17px; }
+    .button.primary { border-color: var(--ink); background: var(--ink); color: var(--page); }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      max-width: 600px;
+      margin-top: 42px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .hero-fact {
+      min-height: 94px;
+      padding: 14px 16px;
+      background: var(--surface);
+    }
+
+    .hero-fact span { display: block; color: var(--faint); font-size: 0.75rem; font-weight: 650; }
+    .hero-fact strong { display: block; margin-top: 9px; font-size: 1rem; line-height: 1.35; }
+
+    .portrait-area {
+      min-width: 0;
+      display: grid;
+      justify-items: center;
+      gap: 18px;
+    }
+
+    .portrait-stage {
+      width: min(100%, 520px);
+      aspect-ratio: 1;
+      position: relative;
+      display: grid;
+      place-items: center;
+      perspective: 1000px;
+      isolation: isolate;
+    }
+
+    .portrait-frame {
+      position: absolute;
+      inset: 9%;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 18px 18px 0 var(--surface-soft), 18px 18px 0 1px var(--line);
+      transform: rotate(2deg);
+    }
+
+    .portrait-frame::before,
+    .portrait-frame::after {
+      content: "";
+      position: absolute;
+      width: 54px;
+      height: 8px;
+      top: -17px;
+      background: var(--blue);
+    }
+
+    .portrait-frame::before { left: 24px; }
+    .portrait-frame::after { right: 24px; background: var(--coral); }
+
+    .avatar-button {
+      width: 68%;
+      aspect-ratio: 1;
+      position: relative;
+      z-index: 4;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      animation: avatarFloat 5.4s ease-in-out infinite;
+      transition: filter 0.3s ease;
+    }
+
+    .avatar-button:hover { filter: drop-shadow(0 20px 25px color-mix(in srgb, var(--purple) 28%, transparent)); }
+
+    .avatar-button img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      user-select: none;
+      -webkit-user-drag: none;
+      transform: translateZ(28px);
+    }
+
+    .avatar-button.is-hello { animation: avatarHello 0.8s var(--spring); }
+
+    .greeting {
+      position: absolute;
+      z-index: 10;
+      top: 7%;
+      right: 2%;
+      min-width: 128px;
+      padding: 10px 13px;
+      border: 1px solid var(--line-strong);
+      border-radius: 6px;
+      background: var(--surface);
+      box-shadow: 0 12px 30px var(--shadow);
+      font-size: 0.88rem;
+      font-weight: 750;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(8px) scale(0.94);
+      transition: opacity 0.3s var(--ease), transform 0.3s var(--spring);
+      pointer-events: none;
+    }
+
+    .greeting.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+
+    .interest-float {
+      --float-distance: 9px;
+      position: absolute;
+      z-index: 8;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      background: var(--surface);
+      box-shadow: 0 12px 28px var(--shadow);
+      font-size: 1.6rem;
+      cursor: pointer;
+      animation: floatInterest 4.8s ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, scale 0.25s var(--spring);
+    }
+
+    .interest-float:hover,
+    .interest-float[aria-pressed="true"] {
+      border-color: var(--node-color, var(--purple));
+      box-shadow: 0 0 0 5px color-mix(in srgb, var(--node-color, var(--purple)) 16%, transparent), 0 14px 30px var(--shadow);
+      scale: 1.08;
+    }
+
+    .interest-float::after {
+      content: attr(data-label);
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-4px);
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .interest-float:hover::after,
+    .interest-float:focus-visible::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    .interest-code { top: 7%; left: 9%; --node-color: var(--blue); --delay: -1.2s; }
+    .interest-photo { top: 2%; right: 16%; --node-color: var(--coral); --delay: -3.1s; --float-distance: 12px; }
+    .interest-media { top: 41%; right: 0; --node-color: var(--purple); --delay: -2.2s; }
+    .interest-community { bottom: 8%; right: 14%; --node-color: var(--green); --delay: -0.7s; --float-distance: 11px; }
+    .interest-ideas { bottom: 13%; left: 4%; --node-color: var(--yellow); --delay: -3.8s; }
+
+    .interest-detail {
+      width: min(100%, 520px);
+      min-height: 126px;
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+      padding: 17px 19px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 12px 34px transparent;
+      transition: box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .interest-detail:hover { border-color: var(--line-strong); box-shadow: 0 12px 34px var(--shadow); }
+    .interest-detail-emoji { font-size: 2rem; text-align: center; }
+    .interest-detail-copy { transition: opacity 0.16s ease, transform 0.16s ease; }
+    .interest-detail-copy.is-changing { opacity: 0; transform: translateY(6px); }
+    .interest-detail h2 { margin: 0; font-size: 1.06rem; line-height: 1.35; }
+    .interest-detail p { margin: 6px 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
+
+    .emoji-spark {
+      position: absolute;
+      z-index: 12;
+      top: 34%;
+      right: 18%;
+      font-size: 1.2rem;
+      pointer-events: none;
+      animation: sparkOut 0.95s var(--ease) forwards;
+    }
+
+    .quote-strip {
+      min-height: 82px;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: center;
+      padding: 16px 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .quote-strip:hover { transform: translateY(-3px); box-shadow: 0 12px 28px var(--shadow); }
+    .quote-index { color: var(--purple); font-size: 0.78rem; font-weight: 800; }
+    .quote-text { font-size: 1rem; font-weight: 680; transition: opacity 0.16s ease, transform 0.16s ease; }
+    .quote-text.is-changing { opacity: 0; transform: translateY(5px); }
+    .quote-strip svg { width: 20px; height: 20px; color: var(--muted); transition: transform 0.3s ease; }
+    .quote-strip:hover svg { transform: rotate(90deg); }
+
+    .section {
+      padding: 112px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 0.38fr 1fr;
+      gap: 52px;
+      margin-bottom: 48px;
+    }
+
+    .section-index { margin: 0; color: var(--purple); font-size: 0.8rem; font-weight: 800; }
+    .section-heading h2 { margin: 0; max-width: 760px; font-size: 3rem; line-height: 1.18; letter-spacing: 0; }
+    .section-heading p:not(.section-index) { max-width: 680px; margin: 15px 0 0; color: var(--muted); font-size: 1rem; }
+
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 74px;
+      align-items: start;
+    }
+
+    .profile-statement {
+      position: sticky;
+      top: 112px;
+    }
+
+    .profile-statement blockquote {
+      margin: 0;
+      font-size: 2.25rem;
+      line-height: 1.35;
+      font-weight: 760;
+    }
+
+    .profile-statement blockquote span { color: var(--purple); }
+    .profile-statement p { margin: 22px 0 0; color: var(--muted); }
+
+    .profile-tabs {
+      display: flex;
+      gap: 8px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+      overflow-x: auto;
+    }
+
+    .profile-tab {
+      min-height: 42px;
+      flex: 0 0 auto;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .profile-tab:hover { color: var(--ink); border-color: var(--line-strong); }
+    .profile-tab[aria-selected="true"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
+
+    .profile-panel {
+      min-height: 390px;
+      padding-top: 38px;
+    }
+
+    .profile-panel-inner { transition: opacity 0.16s ease, transform 0.16s ease; }
+    .profile-panel-inner.is-changing { opacity: 0; transform: translateY(7px); }
+    .panel-kicker { margin: 0 0 9px; color: var(--coral); font-size: 0.78rem; font-weight: 800; }
+    .profile-panel h3 { margin: 0; font-size: 2rem; line-height: 1.3; }
+    .profile-panel > div > p { margin: 17px 0 0; color: var(--muted); font-size: 1rem; }
+
+    .profile-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .profile-point {
+      min-height: 118px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .profile-point span { display: block; color: var(--faint); font-size: 0.76rem; font-weight: 650; }
+    .profile-point strong { display: block; margin-top: 10px; font-size: 0.96rem; line-height: 1.5; }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .method-button {
+      min-height: 164px;
+      display: grid;
+      align-content: space-between;
+      gap: 24px;
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--ink);
+      text-align: left;
+      cursor: pointer;
+      transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+    }
+
+    .method-button:hover { transform: translateY(-4px); border-color: var(--line-strong); box-shadow: 0 12px 30px var(--shadow); }
+    .method-button[aria-pressed="true"] { border-color: var(--method-color, var(--purple)); box-shadow: inset 0 -4px 0 var(--method-color, var(--purple)); }
+    .method-number { color: var(--faint); font-size: 0.76rem; font-weight: 750; }
+    .method-button strong { font-size: 1.12rem; line-height: 1.35; }
+
+    .method-detail {
+      min-height: 112px;
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 28px;
+      align-items: center;
+      margin-top: 14px;
+      padding: 20px;
+      border-left: 4px solid var(--purple);
+      background: var(--surface-soft);
+    }
+
+    .method-detail strong { font-size: 1.05rem; }
+    .method-detail p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    .method-detail-copy { transition: opacity 0.16s ease, transform 0.16s ease; }
+    .method-detail-copy.is-changing { opacity: 0; transform: translateY(6px); }
+
+    .journey-list { border-top: 1px solid var(--line-strong); }
+
+    details { border-bottom: 1px solid var(--line); }
+
+    summary {
+      min-height: 94px;
+      display: grid;
+      grid-template-columns: 130px minmax(0, 1fr) 42px;
+      gap: 24px;
+      align-items: center;
+      list-style: none;
+      cursor: pointer;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+    .journey-year { color: var(--purple); font-size: 0.82rem; font-weight: 800; }
+    .journey-title { font-size: 1.2rem; font-weight: 680; }
+    .journey-plus { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; transition: transform 0.3s var(--ease), background 0.2s ease; }
+    .journey-plus svg { width: 16px; height: 16px; }
+    details[open] .journey-plus { transform: rotate(45deg); background: var(--surface); }
+    .journey-body { max-width: 760px; margin: 0 0 28px 154px; color: var(--muted); }
+
+    .contact-section {
+      padding: 106px 0 58px;
+      border-bottom: 0;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 54px;
+      align-items: end;
+      padding: 56px;
+      border: 1px solid var(--ink);
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: var(--page);
+    }
+
+    .contact-layout h2 { margin: 0; max-width: 720px; font-size: 3.4rem; line-height: 1.12; }
+    .contact-layout p { max-width: 640px; margin: 17px 0 0; color: color-mix(in srgb, var(--page) 72%, transparent); }
+    .contact-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 9px; }
+    .contact-layout .button { border-color: color-mix(in srgb, var(--page) 32%, transparent); background: transparent; color: var(--page); }
+    .contact-layout .button.primary { background: var(--page); color: var(--ink); border-color: var(--page); }
+
+    footer { padding: 0 24px 48px; }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .footer-copy { display: flex; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { width: 108px; height: auto; filter: invert(1); opacity: 0.78; }
+    [data-theme="dark"] .footer-logo { filter: none; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.62s var(--ease), transform 0.62s var(--ease); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    @keyframes avatarFloat {
+      0%, 100% { transform: translateY(0) rotate(-1deg); }
+      50% { transform: translateY(-9px) rotate(1deg); }
+    }
+
+    @keyframes avatarHello {
+      0% { transform: translateY(0) rotate(0deg) scale(1); }
+      30% { transform: translateY(-8px) rotate(-4deg) scale(1.03); }
+      62% { transform: translateY(-5px) rotate(4deg) scale(1.04); }
+      100% { transform: translateY(0) rotate(0deg) scale(1); }
+    }
+
+    @keyframes floatInterest {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(calc(var(--float-distance) * -1)) rotate(3deg); }
+    }
+
+    @keyframes sparkOut {
+      from { opacity: 1; transform: translate(0, 0) scale(0.8) rotate(0deg); }
+      to { opacity: 0; transform: translate(var(--spark-x), var(--spark-y)) scale(1.35) rotate(var(--spark-r)); }
+    }
+
+    @media (max-width: 980px) {
+      .hero-layout { grid-template-columns: 1fr; gap: 52px; }
+      .portrait-area { grid-row: 1; }
+      .hero-copy { text-align: center; }
+      h1, .hero-lead, .hero-facts { margin-inline: auto; }
+      .hero-actions { justify-content: center; }
+      .portrait-stage { width: min(100%, 480px); }
+      .profile-layout { grid-template-columns: 1fr; gap: 38px; }
+      .profile-statement { position: static; }
+      .method-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-layout { grid-template-columns: 1fr; align-items: start; }
+      .contact-actions { justify-content: flex-start; }
+    }
+
+    @media (max-width: 680px) {
+      .shell { width: min(var(--max-width), calc(100% - 30px)); }
+      body::after { width: 3px; box-shadow: 3px 0 0 var(--blue), 6px 0 0 var(--coral), 9px 0 0 var(--green); }
+      .topbar-inner { min-height: 66px; grid-template-columns: 1fr auto; }
+      .page-label, .brand-name span { display: none; }
+      .brand img { width: 44px; height: 28px; }
+      .hero { min-height: auto; padding: 100px 0 58px; }
+      .hero-layout { gap: 38px; }
+      h1 { font-size: 3.25rem; }
+      .hero-lead { font-size: 1rem; line-height: 1.75; }
+      .portrait-stage { width: min(100%, 360px); }
+      .portrait-frame { inset: 10%; box-shadow: 10px 10px 0 var(--surface-soft), 10px 10px 0 1px var(--line); }
+      .interest-float { width: 50px; height: 50px; font-size: 1.35rem; }
+      .interest-code { left: 2%; }
+      .interest-photo { right: 9%; }
+      .interest-media { right: -1%; top: 45%; }
+      .interest-community { right: 7%; bottom: 4%; }
+      .interest-ideas { left: 0; bottom: 9%; }
+      .greeting { right: 0; top: 3%; min-width: 108px; font-size: 0.8rem; }
+      .interest-detail { min-height: 118px; grid-template-columns: 42px 1fr; padding: 15px; }
+      .interest-detail-emoji { font-size: 1.65rem; }
+      .quote-strip { grid-template-columns: auto 1fr; gap: 13px; padding: 14px 15px; }
+      .quote-strip svg { display: none; }
+      .hero-facts { grid-template-columns: 1fr; }
+      .hero-fact { min-height: auto; }
+      .section { padding: 82px 0; }
+      .section-heading { grid-template-columns: 1fr; gap: 13px; margin-bottom: 34px; }
+      .section-heading h2 { font-size: 2.35rem; }
+      .profile-statement blockquote { font-size: 1.8rem; }
+      .profile-panel { min-height: auto; padding-top: 30px; }
+      .profile-panel h3 { font-size: 1.65rem; }
+      .profile-points { grid-template-columns: 1fr; }
+      .profile-point { min-height: auto; }
+      .method-grid { grid-template-columns: 1fr; }
+      .method-button { min-height: 122px; }
+      .method-detail { grid-template-columns: 1fr; gap: 8px; }
+      summary { grid-template-columns: 76px 1fr 36px; gap: 12px; min-height: 88px; }
+      .journey-title { font-size: 1rem; }
+      .journey-body { margin: 0 0 24px 88px; }
+      .contact-section { padding-top: 82px; }
+      .contact-layout { padding: 36px 22px; }
+      .contact-layout h2 { font-size: 2.55rem; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+
+  <style id="modern-creator-theme">
+    :root {
+      --page: #f5f3ee;
+      --surface: #ffffff;
+      --surface-soft: #ece9e2;
+      --ink: #17171a;
+      --muted: #66656b;
+      --faint: #929097;
+      --line: rgba(23, 23, 26, 0.12);
+      --line-strong: rgba(23, 23, 26, 0.24);
+      --purple: #7458ac;
+      --blue: #267b93;
+      --green: #24806f;
+      --coral: #c95f53;
+      --yellow: #9a751a;
+      --shadow: rgba(37, 30, 48, 0.14);
+      --header: rgba(245, 243, 238, 0.82);
+      --glass: rgba(255, 255, 255, 0.72);
+      --contact-bg: #17171a;
+      --contact-ink: #f5f3ee;
+      --radius: 8px;
+      --max-width: 1200px;
+    }
+
+    [data-theme="dark"] {
+      --page: #0a0a0d;
+      --surface: #121216;
+      --surface-soft: #17171c;
+      --ink: #f1efeb;
+      --muted: #aaa7ae;
+      --faint: #76737c;
+      --line: rgba(255, 255, 255, 0.10);
+      --line-strong: rgba(255, 255, 255, 0.22);
+      --purple: #ae91ea;
+      --blue: #73bfd0;
+      --green: #70c9b5;
+      --coral: #f09282;
+      --yellow: #e3c76d;
+      --shadow: rgba(0, 0, 0, 0.44);
+      --header: rgba(10, 10, 13, 0.78);
+      --glass: rgba(18, 18, 22, 0.68);
+      --contact-bg: #f1efeb;
+      --contact-ink: #151518;
+    }
+
+    body {
+      background: var(--page);
+      line-height: 1.68;
+    }
+
+    body::before {
+      inset: 0;
+      width: auto;
+      background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent calc(8.333vw - 1px),
+        var(--line) calc(8.333vw - 1px),
+        var(--line) 8.333vw
+      );
+      background-size: auto;
+      opacity: 0.16;
+      mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0.72) 56%, transparent 100%);
+    }
+
+    body::after {
+      inset: 0;
+      width: auto;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--purple) 5%, transparent), transparent 34%);
+      box-shadow: none;
+      opacity: 1;
+    }
+
+    .shell { width: min(var(--max-width), calc(100% - 56px)); }
+
+    .topbar {
+      padding: 13px 0;
+      border: 0;
+    }
+
+    .topbar.is-scrolled {
+      border-bottom: 1px solid var(--line);
+      background: var(--header);
+      backdrop-filter: blur(22px) saturate(130%);
+      -webkit-backdrop-filter: blur(22px) saturate(130%);
+    }
+
+    .topbar-inner { min-height: 48px; }
+    .brand { gap: 10px; }
+    .brand img { width: 44px; height: 29px; }
+    .brand-name strong { font-size: 0.82rem; font-weight: 760; }
+    .brand-name span { color: var(--faint); font-size: 0.7rem; }
+
+    .page-label {
+      color: var(--faint);
+      font-size: 0.7rem;
+      font-weight: 720;
+    }
+
+    .icon-button,
+    .lang-button {
+      height: 40px;
+      min-width: 40px;
+      border-color: var(--line);
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--surface) 62%, transparent);
+      box-shadow: none;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .icon-button:hover,
+    .lang-button:hover {
+      transform: translateY(-2px);
+      border-color: var(--line-strong);
+      box-shadow: 0 10px 24px var(--shadow);
+    }
+
+    .hero {
+      min-height: 100svh;
+      padding: 112px 0 72px;
+      border: 0;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .hero-layout {
+      grid-template-columns: minmax(0, 0.9fr) minmax(500px, 1.1fr);
+      gap: 42px;
+      min-height: calc(100svh - 184px);
+    }
+
+    .hero-copy { align-self: center; }
+
+    .eyebrow {
+      gap: 9px;
+      margin-bottom: 24px;
+      color: var(--green);
+      font-size: 0.76rem;
+      font-weight: 760;
+    }
+
+    .eyebrow::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 0 5px color-mix(in srgb, currentColor 13%, transparent);
+    }
+
+    h1 {
+      max-width: 650px;
+      font-size: 5.05rem;
+      line-height: 1.02;
+      font-weight: 720;
+    }
+
+    .hero-lead {
+      max-width: 600px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .hero-lead strong { color: var(--ink); font-weight: 620; }
+    .hero-actions { margin-top: 34px; }
+
+    .button {
+      min-height: 48px;
+      padding: 11px 17px;
+      border-color: var(--line-strong);
+      border-radius: 7px;
+      background: transparent;
+      font-size: 0.88rem;
+      font-weight: 680;
+      box-shadow: none;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: var(--ink);
+      box-shadow: 0 12px 28px var(--shadow);
+    }
+
+    .button.primary { border-color: var(--ink); background: var(--ink); color: var(--page); }
+
+    .hero-facts {
+      max-width: 620px;
+      gap: 0;
+      margin-top: 48px;
+      padding-top: 19px;
+      border: 0;
+      border-top: 1px solid var(--line);
+      background: transparent;
+    }
+
+    .hero-fact {
+      min-height: 62px;
+      padding: 0 18px;
+      border-right: 1px solid var(--line);
+      background: transparent;
+    }
+
+    .hero-fact:first-child { padding-left: 0; }
+    .hero-fact:last-child { border-right: 0; }
+    .hero-fact span { color: var(--faint); font-size: 0.7rem; }
+    .hero-fact strong { margin-top: 7px; font-size: 0.9rem; font-weight: 650; }
+
+    .portrait-area {
+      position: relative;
+      align-content: center;
+      gap: 0;
+      min-height: 600px;
+    }
+
+    .portrait-stage {
+      width: min(100%, 540px);
+      overflow: visible;
+    }
+
+    .portrait-frame {
+      display: none;
+    }
+
+    .portrait-frame::before,
+    .portrait-frame::after {
+      display: none;
+    }
+
+    .avatar-button {
+      width: 76%;
+      margin-top: 2%;
+      overflow: hidden;
+      background: #7657b5;
+      filter: drop-shadow(0 24px 32px rgba(0, 0, 0, 0.24));
+      animation: avatarFloat 6.4s ease-in-out infinite;
+    }
+
+    .avatar-button img {
+      border-radius: 0;
+      transform: translateY(-2.2%) scale(1.2);
+    }
+
+    .avatar-button::before {
+      display: none;
+    }
+
+    .avatar-button:hover {
+      filter: drop-shadow(0 28px 40px color-mix(in srgb, var(--purple) 22%, transparent));
+    }
+
+    .greeting {
+      top: 9%;
+      right: 8%;
+      padding: 8px 11px;
+      border: 0;
+      border-radius: 7px;
+      background: var(--ink);
+      color: var(--page);
+      box-shadow: 0 12px 28px var(--shadow);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      font-size: 0.76rem;
+    }
+
+    .interest-float {
+      --float-distance: 12px;
+      width: 52px;
+      height: 52px;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      font-size: 1.8rem;
+      filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.34));
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      animation: floatInterest 5.8s ease-in-out infinite;
+    }
+
+    .interest-float::before {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      z-index: -1;
+      border: 1px solid color-mix(in srgb, var(--node-color, var(--purple)) 34%, var(--line));
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--surface) 78%, transparent);
+      opacity: 0;
+      transform: scale(0.72);
+      transition: opacity 0.22s ease, transform 0.3s var(--spring);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .interest-float:hover,
+    .interest-float[aria-pressed="true"] {
+      box-shadow: none;
+      scale: 1.1;
+    }
+
+    .interest-float:hover::before,
+    .interest-float[aria-pressed="true"]::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .interest-float::after {
+      top: auto;
+      bottom: calc(100% + 9px);
+      border-color: var(--line);
+      border-radius: 6px;
+      background: var(--glass);
+      color: var(--ink);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .interest-code { top: 29%; left: 10%; --delay: -1.2s; }
+    .interest-photo { top: 10%; left: 31%; --delay: -3.1s; }
+    .interest-media { top: 35%; right: 8%; --delay: -2.2s; }
+    .interest-community { right: 18%; bottom: 14%; --delay: -0.7s; }
+    .interest-ideas { top: 8%; right: 24%; --delay: -3.8s; }
+
+    .interest-detail {
+      width: min(100%, 470px);
+      min-height: 96px;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 13px;
+      position: relative;
+      z-index: 20;
+      margin-top: -18px;
+      padding: 14px 4px;
+      border: 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      background: var(--page);
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .interest-detail:hover {
+      border-color: var(--line-strong);
+      box-shadow: none;
+    }
+
+    .interest-detail-emoji { font-size: 1.55rem; }
+    .interest-detail h2 { font-size: 0.92rem; }
+    .interest-detail p { margin-top: 4px; font-size: 0.8rem; line-height: 1.55; }
+
+    .quote-strip {
+      width: min(100%, 470px);
+      min-height: 60px;
+      gap: 16px;
+      margin-top: 0;
+      padding: 12px 4px;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .quote-strip:hover { transform: none; box-shadow: none; }
+    .quote-index { color: var(--coral); font-size: 0.68rem; }
+    .quote-text { font-size: 0.88rem; font-weight: 610; text-align: left; }
+    .quote-strip svg { width: 18px; height: 18px; }
+
+    .section {
+      padding: 128px 0;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 58px;
+      margin-bottom: 64px;
+    }
+
+    .section-index { color: var(--green); font-size: 0.7rem; font-weight: 760; }
+    .section-heading h2 { max-width: 800px; font-size: 3.35rem; line-height: 1.14; font-weight: 680; }
+    .section-heading p:not(.section-index) { max-width: 700px; margin-top: 18px; color: var(--muted); }
+
+    .profile-layout {
+      grid-template-columns: minmax(0, 0.73fr) minmax(0, 1.27fr);
+      gap: 96px;
+    }
+
+    .profile-statement { top: 108px; }
+    .profile-statement blockquote { font-size: 2.55rem; line-height: 1.3; font-weight: 640; }
+    .profile-statement blockquote span { color: var(--purple); }
+    .profile-statement p { max-width: 420px; margin-top: 26px; color: var(--muted); }
+
+    .profile-tabs {
+      gap: 0;
+      padding: 0;
+      border-bottom-color: var(--line);
+    }
+
+    .profile-tab {
+      min-height: 52px;
+      padding: 9px 18px;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      border-radius: 0;
+      background: transparent;
+      color: var(--faint);
+      font-size: 0.82rem;
+    }
+
+    .profile-tab:hover { border-color: color-mix(in srgb, var(--purple) 40%, transparent); color: var(--ink); }
+    .profile-tab[aria-selected="true"] { border-color: var(--purple); background: transparent; color: var(--ink); }
+
+    .profile-panel { min-height: 410px; padding-top: 42px; }
+    .panel-kicker { color: var(--coral); font-size: 0.7rem; }
+    .profile-panel h3 { font-size: 2.15rem; font-weight: 640; }
+    .profile-panel > div > p { max-width: 720px; margin-top: 20px; color: var(--muted); line-height: 1.8; }
+
+    .profile-points {
+      gap: 0;
+      margin-top: 38px;
+      border-top: 1px solid var(--line);
+    }
+
+    .profile-point {
+      min-height: 112px;
+      padding: 19px 22px 19px 0;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .profile-point:nth-child(odd) { border-right: 1px solid var(--line); }
+    .profile-point:nth-child(even) { padding-left: 22px; }
+    .profile-point span { color: var(--faint); font-size: 0.7rem; }
+    .profile-point strong { margin-top: 8px; font-size: 0.92rem; font-weight: 620; }
+
+    .method-grid { gap: 0; border-top: 1px solid var(--line); }
+
+    .method-button {
+      min-height: 180px;
+      padding: 21px 20px;
+      border: 0;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .method-button:first-child { border-left: 1px solid var(--line); }
+    .method-button:hover {
+      transform: none;
+      border-color: var(--line);
+      background: color-mix(in srgb, var(--method-color, var(--purple)) 8%, transparent);
+      box-shadow: none;
+    }
+
+    .method-button[aria-pressed="true"] {
+      border-color: var(--line);
+      background: color-mix(in srgb, var(--method-color, var(--purple)) 11%, transparent);
+      box-shadow: inset 0 3px 0 var(--method-color, var(--purple));
+    }
+
+    .method-number { color: var(--faint); font-size: 0.7rem; }
+    .method-button strong { font-size: 1.08rem; font-weight: 620; }
+
+    .method-detail {
+      min-height: 116px;
+      margin-top: 0;
+      padding: 24px 26px;
+      border-left-width: 3px;
+      background: var(--surface-soft);
+    }
+
+    .method-detail strong { font-weight: 650; }
+    .method-detail p { color: var(--muted); line-height: 1.7; }
+
+    .journey-list { border-top-color: var(--line-strong); }
+    details { border-bottom-color: var(--line); }
+    summary { min-height: 102px; grid-template-columns: 138px minmax(0, 1fr) 42px; }
+    .journey-year { color: var(--coral); font-size: 0.72rem; }
+    .journey-title { font-size: 1.18rem; font-weight: 610; }
+    .journey-plus { border-color: var(--line); }
+    details[open] .journey-plus { background: var(--surface-soft); }
+    .journey-body { color: var(--muted); line-height: 1.8; }
+
+    .contact-section {
+      padding: 106px 0;
+      border: 0;
+      background: var(--contact-bg);
+      color: var(--contact-ink);
+    }
+
+    .contact-layout {
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: inherit;
+    }
+
+    .contact-layout h2 { font-size: 4rem; font-weight: 680; }
+    .contact-layout p { color: color-mix(in srgb, var(--contact-ink) 65%, transparent); }
+    .contact-layout .button { border-color: color-mix(in srgb, var(--contact-ink) 28%, transparent); color: var(--contact-ink); }
+    .contact-layout .button.primary { border-color: var(--contact-ink); background: var(--contact-ink); color: var(--contact-bg); }
+
+    footer { padding: 34px 28px 46px; }
+    .footer-inner { padding-top: 0; border: 0; }
+
+    @keyframes slowOrbit {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes slowOrbitReverse {
+      to { transform: rotate(-360deg); }
+    }
+
+    @keyframes avatarFloat {
+      0%, 100% { transform: translateY(0) rotate(-0.7deg); }
+      50% { transform: translateY(-11px) rotate(0.7deg); }
+    }
+
+    @keyframes floatInterest {
+      0%, 100% { transform: translate(0, 0) rotate(-3deg); }
+      50% { transform: translate(5px, calc(var(--float-distance) * -1)) rotate(3deg); }
+    }
+
+    @media (max-width: 1040px) {
+      .hero-layout { grid-template-columns: 1fr; gap: 52px; }
+      .portrait-area { grid-row: 1; min-height: auto; }
+      .portrait-stage { width: min(100%, 520px); }
+      .hero-copy { max-width: 760px; margin-inline: auto; text-align: center; }
+      h1, .hero-lead, .hero-facts { margin-inline: auto; }
+      .hero-actions { justify-content: center; }
+      .profile-layout { gap: 58px; }
+    }
+
+    @media (max-width: 720px) {
+      .shell { width: min(var(--max-width), calc(100% - 32px)); }
+      .topbar { padding: 9px 0; }
+      .topbar-inner { min-height: 48px; grid-template-columns: 1fr auto; }
+      .page-label, .brand-name span { display: none; }
+      .brand img { width: 42px; height: 27px; }
+      .icon-button, .lang-button { height: 38px; min-width: 38px; }
+
+      .hero { min-height: auto; padding: 92px 0 64px; }
+      .hero-layout { min-height: 0; gap: 42px; }
+      .portrait-stage { width: min(100%, 380px); }
+      .avatar-button { width: 75%; }
+      .greeting { top: 8%; right: 0; }
+
+      .interest-float { width: 46px; height: 46px; font-size: 1.5rem; }
+      .interest-code { top: 29%; right: auto; bottom: auto; left: 3%; }
+      .interest-photo { top: 7%; right: auto; bottom: auto; left: 27%; }
+      .interest-media { top: 36%; right: 0; bottom: auto; left: auto; }
+      .interest-community { top: auto; right: 10%; bottom: 12%; left: auto; }
+      .interest-ideas { top: 6%; right: 19%; bottom: auto; left: auto; }
+
+      .interest-detail,
+      .quote-strip { width: min(100%, 380px); }
+      .interest-detail { margin-top: -14px; }
+
+      h1 { font-size: 3.35rem; line-height: 1.05; }
+      .hero-lead { font-size: 0.98rem; }
+      .hero-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .hero-fact { min-height: 68px; padding: 0 10px; }
+      .hero-fact strong { font-size: 0.8rem; }
+
+      .section { padding: 88px 0; }
+      .section-heading { grid-template-columns: 1fr; gap: 14px; margin-bottom: 42px; }
+      .section-heading h2 { font-size: 2.45rem; }
+      .profile-layout { grid-template-columns: 1fr; gap: 36px; }
+      .profile-statement { position: static; }
+      .profile-statement blockquote { font-size: 1.92rem; }
+      .profile-tabs { overflow-x: auto; }
+      .profile-tab { flex: 1 0 120px; padding-inline: 10px; }
+      .profile-panel { min-height: auto; padding-top: 34px; }
+      .profile-panel h3 { font-size: 1.7rem; }
+      .profile-points { grid-template-columns: 1fr; }
+      .profile-point:nth-child(odd) { border-right: 0; }
+      .profile-point:nth-child(even) { padding-left: 0; }
+
+      .method-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .method-button { min-height: 138px; border-left: 1px solid var(--line); }
+      .method-button:nth-child(odd) { border-right: 0; }
+      .method-detail { grid-template-columns: 1fr; gap: 8px; padding: 21px; }
+
+      summary { min-height: 94px; grid-template-columns: 76px 1fr 36px; gap: 12px; }
+      .journey-title { font-size: 1rem; }
+      .journey-body { margin: 0 0 26px 88px; }
+
+      .contact-section { padding: 82px 0; }
+      .contact-layout { grid-template-columns: 1fr; align-items: start; }
+      .contact-layout h2 { font-size: 2.75rem; }
+      .contact-actions { justify-content: flex-start; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 430px) {
+      .shell { width: min(var(--max-width), calc(100% - 26px)); }
+      .brand-name { display: none; }
+      h1 { font-size: 2.92rem; }
+      .hero-actions .button { flex: 1 1 150px; }
+      .portrait-stage { width: min(100%, 340px); }
+      .interest-float { width: 42px; height: 42px; font-size: 1.38rem; }
+      .interest-detail { grid-template-columns: 38px 1fr; padding: 14px; }
+      .interest-detail p { font-size: 0.78rem; }
+      .quote-strip { gap: 11px; }
+      .quote-text { font-size: 0.8rem; }
+      .hero-facts { display: flex; }
+      .hero-fact { flex: 1; padding-inline: 8px; }
+      .section-heading h2 { font-size: 2.15rem; }
+      .method-grid { grid-template-columns: 1fr; }
+      .method-button { border-right: 1px solid var(--line); }
+      .contact-layout h2 { font-size: 2.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">跳至主要内容</a>
+
+  <header class="topbar" id="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="../index.html" aria-label="返回 ZYMCT 首页">
+        <img src="https://vip.123pan.cn/1812579799/yk6baz03t0l000dc5iqel5gy6yzv0pvaDIYPDqJ0BIU2BGxzDwU0.png" alt="" width="50" height="32">
+        <span class="brand-name"><strong>ZYMCT</strong><span data-i18n="back_home">返回生态</span></span>
+      </a>
+      <span class="page-label" data-i18n="page_label">CREATOR PROFILE / 作者档案</span>
+      <div class="top-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="切换明暗主题" title="切换明暗主题">
+          <svg id="moonIcon" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+          <svg id="sunIcon" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" hidden><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="lang-button" id="langToggle" type="button" aria-label="Switch language">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="shell">
+        <div class="hero-layout">
+          <div class="hero-copy reveal">
+            <p class="eyebrow" data-i18n="eyebrow">ABOUT THE CREATOR</p>
+            <h1 data-i18n="hero_title">你好，我是致月的创作者。</h1>
+            <p class="hero-lead" data-i18n="hero_lead">我目前仍是一名学生。比起等到一切都准备好，我更习惯先把一个想法做成可用的第一版，再在真实使用里慢慢修正。<strong>ZYMCT 是这些尝试留下的总和。</strong></p>
+            <div class="hero-actions">
+              <a class="button primary" href="#profile">
+                <span data-i18n="read_profile">认识我</span>
+                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
+              </a>
+              <button class="button" id="helloButton" type="button" data-i18n="say_hello">打个招呼</button>
+            </div>
+
+            <div class="hero-facts" aria-label="创作经历摘要">
+              <div class="hero-fact"><span data-i18n="fact_start">开始于</span><strong>2021</strong></div>
+              <div class="hero-fact"><span data-i18n="fact_versions">社区迭代</span><strong>V1.0 → V3.0</strong></div>
+              <div class="hero-fact"><span data-i18n="fact_photo">摄影活动</span><strong data-i18n="fact_photo_value">4 届</strong></div>
+            </div>
+          </div>
+
+          <div class="portrait-area reveal">
+            <div class="portrait-stage" id="portraitStage">
+              <div class="portrait-frame" aria-hidden="true"></div>
+              <button class="avatar-button" id="avatarButton" type="button" aria-label="向作者头像问好">
+                <img src="../assets/apple-avatar.png" alt="作者的 Apple 风格头像，正微笑着挥手" width="354" height="356">
+              </button>
+              <div class="greeting" id="greeting" aria-live="polite">你好，很高兴认识你</div>
+
+              <button class="interest-float interest-code" type="button" data-interest="code" data-label="网页开发" aria-pressed="true"><span aria-hidden="true">💻</span></button>
+              <button class="interest-float interest-photo" type="button" data-interest="photo" data-label="摄影" aria-pressed="false"><span aria-hidden="true">📷</span></button>
+              <button class="interest-float interest-media" type="button" data-interest="media" data-label="影音" aria-pressed="false"><span aria-hidden="true">🎬</span></button>
+              <button class="interest-float interest-community" type="button" data-interest="community" data-label="社区" aria-pressed="false"><span aria-hidden="true">🌐</span></button>
+              <button class="interest-float interest-ideas" type="button" data-interest="ideas" data-label="产品想法" aria-pressed="false"><span aria-hidden="true">💡</span></button>
+            </div>
+
+            <div class="interest-detail" aria-live="polite">
+              <div class="interest-detail-emoji" id="interestEmoji" aria-hidden="true">💻</div>
+              <div class="interest-detail-copy" id="interestCopy">
+                <h2 id="interestTitle">网页开发</h2>
+                <p id="interestBody">我喜欢让复杂的功能看起来简单，并让每一次点击都自然、可靠。</p>
+              </div>
+            </div>
+
+            <button class="quote-strip" id="quoteStrip" type="button" aria-label="切换一句创作想法">
+              <span class="quote-index" id="quoteIndex">01 / 04</span>
+              <span class="quote-text" id="quoteText">有想法，就让它发生。</span>
+              <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 11a8.1 8.1 0 0 0-15.5-2M4 4v5h5m-5 4a8.1 8.1 0 0 0 15.5 2M20 20v-5h-5"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="profile">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="section-index">01 / PROFILE</p>
+          <div>
+            <h2 data-i18n="profile_heading">我是谁，不只写在一个头衔里。</h2>
+            <p data-i18n="profile_intro">这里没有包装过的履历。我更想讲清楚自己现在站在哪里、为什么持续做这些项目，以及我希望它们最后给人怎样的感受。</p>
+          </div>
+        </div>
+
+        <div class="profile-layout">
+          <aside class="profile-statement reveal">
+            <blockquote data-i18n="profile_quote">把好奇心变成作品，再让作品接受真实世界的<span>检验</span>。</blockquote>
+            <p data-i18n="profile_quote_body">这是我从致月社区的三次大版本、摄影活动以及一系列小工具中慢慢学会的创作方式。</p>
+          </aside>
+
+          <div class="reveal">
+            <div class="profile-tabs" role="tablist" aria-label="作者简介分类">
+              <button class="profile-tab" id="tab-story" type="button" role="tab" aria-selected="true" aria-controls="profilePanel" data-profile="story" data-i18n="tab_story">我的起点</button>
+              <button class="profile-tab" id="tab-now" type="button" role="tab" aria-selected="false" aria-controls="profilePanel" data-profile="now" data-i18n="tab_now">现在在做</button>
+              <button class="profile-tab" id="tab-values" type="button" role="tab" aria-selected="false" aria-controls="profilePanel" data-profile="values" data-i18n="tab_values">我在意的</button>
+            </div>
+
+            <div class="profile-panel" id="profilePanel" role="tabpanel" tabindex="0" aria-labelledby="tab-story">
+              <div class="profile-panel-inner" id="profilePanelInner">
+                <p class="panel-kicker" id="profileKicker">ORIGIN / 起点</p>
+                <h3 id="profileTitle">从一个很小的学生工作室开始。</h3>
+                <p id="profileBody">2021 年，我还没有一张完整的路线图，只是希望把自己对网页、社区和数字体验的兴趣真正做出来。致月云科技由此出现，后来又慢慢延伸成现在的 ZYMCT 生态。</p>
+                <div class="profile-points" id="profilePoints"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="section-index">02 / METHOD</p>
+          <div>
+            <h2 data-i18n="method_heading">一个想法通常怎样变成作品。</h2>
+            <p data-i18n="method_intro">这不是固定流程，而是我更偏好的节奏：先找到真正的问题，再尽快做出能够被使用和感受的版本。</p>
+          </div>
+        </div>
+
+        <div class="method-grid reveal">
+          <button class="method-button" type="button" data-method="notice" aria-pressed="true" style="--method-color:var(--blue)"><span class="method-number">01</span><strong data-i18n="method_1">先注意到问题</strong></button>
+          <button class="method-button" type="button" data-method="make" aria-pressed="false" style="--method-color:var(--coral)"><span class="method-number">02</span><strong data-i18n="method_2">做出第一版</strong></button>
+          <button class="method-button" type="button" data-method="feel" aria-pressed="false" style="--method-color:var(--green)"><span class="method-number">03</span><strong data-i18n="method_3">让人真实使用</strong></button>
+          <button class="method-button" type="button" data-method="iterate" aria-pressed="false" style="--method-color:var(--purple)"><span class="method-number">04</span><strong data-i18n="method_4">继续迭代</strong></button>
+        </div>
+
+        <div class="method-detail reveal" id="methodDetail">
+          <strong id="methodTitle">观察</strong>
+          <p class="method-detail-copy" id="methodCopy">很多项目并不是从“我要做一个产品”开始，而是从一次不顺手、一个没被满足的需要，或一个值得留下的瞬间开始。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="journey">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="section-index">03 / JOURNEY</p>
+          <div>
+            <h2 data-i18n="journey_heading">我和 ZYMCT 一起长大。</h2>
+            <p data-i18n="journey_intro">它不是一条笔直的路线，而是一组在不同阶段认真做过、重新做过，也保存下来的尝试。</p>
+          </div>
+        </div>
+
+        <div class="journey-list reveal">
+          <details open>
+            <summary><span class="journey-year">2021</span><span class="journey-title" data-i18n="journey_1_title">致月云科技有了起点</span><span class="journey-plus"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span></summary>
+            <p class="journey-body" data-i18n="journey_1_body">以学生创作者的身份开始，先做能做的小事。没有等待完美的时机，而是在做的过程中逐渐找到方向。</p>
+          </details>
+          <details>
+            <summary><span class="journey-year">V1 → V3</span><span class="journey-title" data-i18n="journey_2_title">社区经历三次主要迭代</span><span class="journey-plus"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span></summary>
+            <p class="journey-body" data-i18n="journey_2_body">致月社区与 EnjoyCloud 协作，在一次次重做中变得更完整。这个过程让我真正理解了长期维护和共同创作。</p>
+          </details>
+          <details>
+            <summary><span class="journey-year">04 EDITIONS</span><span class="journey-title" data-i18n="journey_3_title">摄影让记录成为创作的一部分</span><span class="journey-plus"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span></summary>
+            <p class="journey-body" data-i18n="journey_3_body">四届摄影活动留下的不只是照片，也让我更认真地看待表达、记忆和人与人之间的连接。</p>
+          </details>
+          <details>
+            <summary><span class="journey-year">NOW</span><span class="journey-title" data-i18n="journey_4_title">从单个项目走向产品矩阵</span><span class="journey-plus"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span></summary>
+            <p class="journey-body" data-i18n="journey_4_body">FlowConvert、Key Safe、Emby、2Infinity，以及社区和公益相关尝试，正在共同组成一个仍会变化的生态。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section">
+      <div class="shell">
+        <div class="contact-layout reveal">
+          <div>
+            <h2 data-i18n="contact_heading">有想法，就让它发生。</h2>
+            <p data-i18n="contact_body">欢迎创意交流、合作探讨、问题反馈，或只是一句简单的你好。</p>
+          </div>
+          <div class="contact-actions">
+            <a class="button primary" href="mailto:opzymct@outlook.com">
+              <span data-i18n="email">写封邮件</span>
+              <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </a>
+            <a class="button" href="../index.html">
+              <span data-i18n="back_ecosystem">回到生态</span>
+              <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-copy"><span>© 2026 ZYMCT</span><span data-i18n="footer">愿世界和平 · Peace &amp; Love</span></div>
+      <img class="footer-logo" src="https://vip.123pan.cn/1812579799/yk6baz03t0m000dc5iqel5gqt5zuzavpDIYPDqJ0BIU2BGxzDwU0.png" alt="ZYMCT" width="108" height="8" loading="lazy">
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      zh: {
+        skip: "跳至主要内容",
+        back_home: "返回生态",
+        page_label: "CREATOR PROFILE / 作者档案",
+        eyebrow: "ABOUT THE CREATOR",
+        hero_title: "你好，我是致月的创作者。",
+        hero_lead: "我目前仍是一名学生。比起等到一切都准备好，我更习惯先把一个想法做成可用的第一版，再在真实使用里慢慢修正。<strong>ZYMCT 是这些尝试留下的总和。</strong>",
+        read_profile: "认识我",
+        say_hello: "打个招呼",
+        fact_start: "开始于",
+        fact_versions: "社区迭代",
+        fact_photo: "摄影活动",
+        fact_photo_value: "4 届",
+        profile_heading: "我是谁，不只写在一个头衔里。",
+        profile_intro: "这里没有包装过的履历。我更想讲清楚自己现在站在哪里、为什么持续做这些项目，以及我希望它们最后给人怎样的感受。",
+        profile_quote: "把好奇心变成作品，再让作品接受真实世界的<span>检验</span>。",
+        profile_quote_body: "这是我从致月社区的三次大版本、摄影活动以及一系列小工具中慢慢学会的创作方式。",
+        tab_story: "我的起点",
+        tab_now: "现在在做",
+        tab_values: "我在意的",
+        method_heading: "一个想法通常怎样变成作品。",
+        method_intro: "这不是固定流程，而是我更偏好的节奏：先找到真正的问题，再尽快做出能够被使用和感受的版本。",
+        method_1: "先注意到问题",
+        method_2: "做出第一版",
+        method_3: "让人真实使用",
+        method_4: "继续迭代",
+        journey_heading: "我和 ZYMCT 一起长大。",
+        journey_intro: "它不是一条笔直的路线，而是一组在不同阶段认真做过、重新做过，也保存下来的尝试。",
+        journey_1_title: "致月云科技有了起点",
+        journey_1_body: "以学生创作者的身份开始，先做能做的小事。没有等待完美的时机，而是在做的过程中逐渐找到方向。",
+        journey_2_title: "社区经历三次主要迭代",
+        journey_2_body: "致月社区与 EnjoyCloud 协作，在一次次重做中变得更完整。这个过程让我真正理解了长期维护和共同创作。",
+        journey_3_title: "摄影让记录成为创作的一部分",
+        journey_3_body: "四届摄影活动留下的不只是照片，也让我更认真地看待表达、记忆和人与人之间的连接。",
+        journey_4_title: "从单个项目走向产品矩阵",
+        journey_4_body: "FlowConvert、Key Safe、Emby、2Infinity，以及社区和公益相关尝试，正在共同组成一个仍会变化的生态。",
+        contact_heading: "有想法，就让它发生。",
+        contact_body: "欢迎创意交流、合作探讨、问题反馈，或只是一句简单的你好。",
+        email: "写封邮件",
+        back_ecosystem: "回到生态",
+        footer: "愿世界和平 · Peace & Love"
+      },
+      en: {
+        skip: "Skip to main content",
+        back_home: "Back to ecosystem",
+        page_label: "CREATOR PROFILE",
+        eyebrow: "ABOUT THE CREATOR",
+        hero_title: "Hello, I am the creator behind ZYMCT.",
+        hero_lead: "I am still a student. Instead of waiting until everything feels ready, I prefer to turn an idea into a usable first version and improve it through real use. <strong>ZYMCT is the sum of those attempts.</strong>",
+        read_profile: "Meet the creator",
+        say_hello: "Say hello",
+        fact_start: "Started",
+        fact_versions: "Community versions",
+        fact_photo: "Photo events",
+        fact_photo_value: "4 editions",
+        profile_heading: "Who I am does not fit into one title.",
+        profile_intro: "This is not a polished résumé. I would rather explain where I am now, why I keep making these projects, and how I hope they feel to the people who use them.",
+        profile_quote: "Turn curiosity into work, then let the real world <span>test it</span>.",
+        profile_quote_body: "It is an approach I learned through three major community versions, photography events, and a growing collection of small tools.",
+        tab_story: "My beginning",
+        tab_now: "What I am doing",
+        tab_values: "What matters",
+        method_heading: "How an idea usually becomes a piece of work.",
+        method_intro: "It is not a rigid process, just the rhythm I prefer: find the real problem, then quickly make something people can use and feel.",
+        method_1: "Notice the problem",
+        method_2: "Make the first version",
+        method_3: "Let people use it",
+        method_4: "Keep iterating",
+        journey_heading: "I grew alongside ZYMCT.",
+        journey_intro: "It is not a straight line, but a collection of attempts that were made, remade, and preserved at different moments.",
+        journey_1_title: "MoonCloud found its beginning",
+        journey_1_body: "I started as a student creator by making the small things I could make. I did not wait for a perfect moment; direction appeared through the work itself.",
+        journey_2_title: "The community reached three major versions",
+        journey_2_body: "ZYMCT Community grew through collaboration with EnjoyCloud and repeated rebuilds. The process taught me what long-term care and shared creation really mean.",
+        journey_3_title: "Photography made documentation part of creation",
+        journey_3_body: "Four photography events left more than images. They made me take expression, memory, and human connection more seriously.",
+        journey_4_title: "Individual projects became a product matrix",
+        journey_4_body: "FlowConvert, Key Safe, Emby, 2Infinity, and experiments around community and public good now form an ecosystem that is still changing.",
+        contact_heading: "Have an idea? Let it happen.",
+        contact_body: "Ideas, collaborations, bug reports, or a simple hello are all welcome.",
+        email: "Write an email",
+        back_ecosystem: "Back to ecosystem",
+        footer: "World Peace · Peace & Love"
+      }
+    };
+
+    const interestData = {
+      zh: {
+        code: { emoji: "💻", label: "网页开发", body: "我喜欢让复杂的功能看起来简单，并让每一次点击都自然、可靠。" },
+        photo: { emoji: "📷", label: "摄影", body: "摄影让我注意细节，也让我愿意为一个值得留下的瞬间多等一会儿。" },
+        media: { emoji: "🎬", label: "影音体验", body: "我在意画面、声音与观看节奏，希望技术最后能退到内容背后。" },
+        community: { emoji: "🌐", label: "社区与连接", body: "比流量更重要的是让独立的想法被看见，让交流保持真诚和自由。" },
+        ideas: { emoji: "💡", label: "产品想法", body: "我喜欢从一个小问题出发，把模糊的念头慢慢变成可以使用的东西。" }
+      },
+      en: {
+        code: { emoji: "💻", label: "Web development", body: "I enjoy making complex functions feel simple, so every interaction feels natural and dependable." },
+        photo: { emoji: "📷", label: "Photography", body: "Photography makes me notice details and wait a little longer for moments worth keeping." },
+        media: { emoji: "🎬", label: "Media experiences", body: "I care about images, sound, and viewing rhythm, with technology ultimately stepping behind the content." },
+        community: { emoji: "🌐", label: "Community", body: "More than reach, I care about independent ideas being seen and conversations staying open and sincere." },
+        ideas: { emoji: "💡", label: "Product ideas", body: "I like starting with a small problem and slowly turning a vague thought into something usable." }
+      }
+    };
+
+    const profileData = {
+      zh: {
+        story: {
+          kicker: "ORIGIN / 起点",
+          title: "从一个很小的学生工作室开始。",
+          body: "2021 年，我还没有一张完整的路线图，只是希望把自己对网页、社区和数字体验的兴趣真正做出来。致月云科技由此出现，后来又慢慢延伸成现在的 ZYMCT 生态。",
+          points: [["身份", "仍在学习中的学生创作者"], ["起点", "2021 年发起致月云科技"], ["方向", "网页、工具、影像与社区"], ["态度", "先开始，再持续把它做好"]]
+        },
+        now: {
+          kicker: "NOW / 此刻",
+          title: "整理过去，也继续做新的东西。",
+          body: "我正在重新梳理 ZYMCT 的产品入口与介绍，让曾经做过的项目更容易被理解；同时也继续完善 FlowConvert、Key Safe、Emby、2Infinity 等不同方向的体验。",
+          points: [["正在整理", "ZYMCT 产品矩阵与历史档案"], ["正在打磨", "更流畅、清楚的网页体验"], ["正在学习", "设计、开发与内容表达"], ["仍然保留", "对新想法的开放和好奇"]]
+        },
+        values: {
+          kicker: "VALUES / 我在意的",
+          title: "流畅、安全，也有人的温度。",
+          body: "我希望一个产品不需要复杂解释就能被自然使用，也希望隐私和安全不是最后补上的功能。技术可以很强，但它首先应该尊重使用它的人。",
+          points: [["流畅", "减少不必要的阻力"], ["安全", "从一开始认真对待"], ["真诚", "不假装每个作品都已经完美"], ["长期", "允许项目在迭代中慢慢长大"]]
+        }
+      },
+      en: {
+        story: {
+          kicker: "ORIGIN",
+          title: "It began as a very small student studio.",
+          body: "In 2021, I did not have a complete roadmap. I simply wanted to make my interests in websites, community, and digital experiences real. MoonCloud Technology began there and gradually grew into today's ZYMCT ecosystem.",
+          points: [["Identity", "A student creator who is still learning"], ["Beginning", "Started MoonCloud Technology in 2021"], ["Fields", "Web, tools, imagery, and community"], ["Approach", "Begin, then keep making it better"]]
+        },
+        now: {
+          kicker: "NOW",
+          title: "Organizing the past while continuing to make new things.",
+          body: "I am reshaping the ZYMCT product entry points and stories so earlier work is easier to understand, while continuing to refine experiences such as FlowConvert, Key Safe, Emby, and 2Infinity.",
+          points: [["Organizing", "The product matrix and archives"], ["Refining", "Clearer, more fluid web experiences"], ["Learning", "Design, development, and expression"], ["Keeping", "An open and curious mind"]]
+        },
+        values: {
+          kicker: "VALUES",
+          title: "Fluid and secure, with a human touch.",
+          body: "I want products to feel natural without long explanations, and I do not believe privacy and security should be added at the end. Technology can be powerful, but it should first respect the person using it.",
+          points: [["Fluid", "Remove unnecessary friction"], ["Secure", "Take it seriously from the beginning"], ["Honest", "Never pretend every piece is already perfect"], ["Long-term", "Let projects grow through iteration"]]
+        }
+      }
+    };
+
+    const methodData = {
+      zh: {
+        notice: { title: "观察", body: "很多项目并不是从“我要做一个产品”开始，而是从一次不顺手、一个没被满足的需要，或一个值得留下的瞬间开始。", color: "var(--blue)" },
+        make: { title: "原型", body: "先做出最小但完整的一版。它不需要拥有所有功能，却必须让核心想法变得真实、可以被体验。", color: "var(--coral)" },
+        feel: { title: "使用", body: "让真实的人去点击、阅读和使用。很多真正重要的问题，只有离开自己的屏幕后才会出现。", color: "var(--green)" },
+        iterate: { title: "迭代", body: "根据反馈继续修改，也允许方向发生变化。致月社区从 V1 到 V3，就是这种长期迭代留下的痕迹。", color: "var(--purple)" }
+      },
+      en: {
+        notice: { title: "Observe", body: "Many projects do not begin with 'I want to build a product.' They begin with friction, an unmet need, or a moment worth preserving.", color: "var(--blue)" },
+        make: { title: "Prototype", body: "Make the smallest complete version first. It does not need every feature, but it must make the central idea real and experienceable.", color: "var(--coral)" },
+        feel: { title: "Use", body: "Let real people click, read, and use it. Many important problems only appear once the work leaves your own screen.", color: "var(--green)" },
+        iterate: { title: "Iterate", body: "Change it through feedback and allow the direction to evolve. ZYMCT Community's path from V1 to V3 carries that history.", color: "var(--purple)" }
+      }
+    };
+
+    const quotes = {
+      zh: ["有想法，就让它发生。", "先做出真实的一版，再让它慢慢变好。", "技术应该有能力，也应该有温度。", "把好奇心做成别人能够使用的东西。"],
+      en: ["Have an idea? Let it happen.", "Make one real version, then let it improve.", "Technology should be capable and still feel human.", "Turn curiosity into something others can use."]
+    };
+
+    const greetings = ["你好，很高兴认识你", "Hello", "Kia ora", "欢迎来到我的小档案", "一起做点有意思的事"];
+
+    const root = document.documentElement;
+    const topbar = document.getElementById("topbar");
+    const themeToggle = document.getElementById("themeToggle");
+    const moonIcon = document.getElementById("moonIcon");
+    const sunIcon = document.getElementById("sunIcon");
+    const langToggle = document.getElementById("langToggle");
+    const portraitStage = document.getElementById("portraitStage");
+    const avatarButton = document.getElementById("avatarButton");
+    const helloButton = document.getElementById("helloButton");
+    const greeting = document.getElementById("greeting");
+    const interestCopy = document.getElementById("interestCopy");
+    const quoteText = document.getElementById("quoteText");
+    const profilePanelInner = document.getElementById("profilePanelInner");
+    const methodCopy = document.getElementById("methodCopy");
+    let currentLang = localStorage.getItem("zymct_lang") || "zh";
+    let activeInterest = "code";
+    let activeProfile = "story";
+    let activeMethod = "notice";
+    let quoteIndex = 0;
+    let greetingIndex = 0;
+    let greetingTimer;
+
+    function setTheme(theme) {
+      root.dataset.theme = theme;
+      localStorage.setItem("zymct_theme_preference", theme);
+      moonIcon.hidden = theme === "dark";
+      sunIcon.hidden = theme !== "dark";
+      document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#0a0a0d" : "#f5f3ee";
+    }
+
+    function renderInterest(immediate = false) {
+      const data = interestData[currentLang][activeInterest];
+      const update = () => {
+        document.getElementById("interestEmoji").textContent = data.emoji;
+        document.getElementById("interestTitle").textContent = data.label;
+        document.getElementById("interestBody").textContent = data.body;
+        interestCopy.classList.remove("is-changing");
+      };
+
+      document.querySelectorAll(".interest-float").forEach((button) => {
+        const buttonData = interestData[currentLang][button.dataset.interest];
+        button.dataset.label = buttonData.label;
+        button.setAttribute("aria-label", buttonData.label);
+        button.setAttribute("aria-pressed", String(button.dataset.interest === activeInterest));
+      });
+
+      if (immediate) update();
+      else {
+        interestCopy.classList.add("is-changing");
+        window.setTimeout(update, 160);
+      }
+    }
+
+    function renderProfile(immediate = false) {
+      const data = profileData[currentLang][activeProfile];
+      const update = () => {
+        document.getElementById("profileKicker").textContent = data.kicker;
+        document.getElementById("profileTitle").textContent = data.title;
+        document.getElementById("profileBody").textContent = data.body;
+        document.getElementById("profilePoints").innerHTML = data.points.map(([label, value]) => `<div class="profile-point"><span>${label}</span><strong>${value}</strong></div>`).join("");
+        profilePanelInner.classList.remove("is-changing");
+      };
+
+      if (immediate) update();
+      else {
+        profilePanelInner.classList.add("is-changing");
+        window.setTimeout(update, 160);
+      }
+    }
+
+    function renderMethod(immediate = false) {
+      const data = methodData[currentLang][activeMethod];
+      const update = () => {
+        document.getElementById("methodTitle").textContent = data.title;
+        methodCopy.textContent = data.body;
+        document.getElementById("methodDetail").style.borderLeftColor = data.color;
+        methodCopy.classList.remove("is-changing");
+      };
+
+      if (immediate) update();
+      else {
+        methodCopy.classList.add("is-changing");
+        window.setTimeout(update, 160);
+      }
+    }
+
+    function renderQuote(immediate = false) {
+      const update = () => {
+        quoteText.textContent = quotes[currentLang][quoteIndex];
+        document.getElementById("quoteIndex").textContent = `${String(quoteIndex + 1).padStart(2, "0")} / ${String(quotes[currentLang].length).padStart(2, "0")}`;
+        quoteText.classList.remove("is-changing");
+      };
+
+      if (immediate) update();
+      else {
+        quoteText.classList.add("is-changing");
+        window.setTimeout(update, 160);
+      }
+    }
+
+    function applyLanguage() {
+      root.lang = currentLang === "zh" ? "zh-CN" : "en";
+      langToggle.textContent = currentLang === "zh" ? "EN" : "中";
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const value = translations[currentLang][element.dataset.i18n];
+        if (value) element.innerHTML = value;
+      });
+      localStorage.setItem("zymct_lang", currentLang);
+      quoteIndex = 0;
+      renderInterest(true);
+      renderProfile(true);
+      renderMethod(true);
+      renderQuote(true);
+    }
+
+    function createEmojiBurst() {
+      const emoji = ["✨", "💡", "📷", "💻", "🎬"];
+      for (let index = 0; index < 10; index += 1) {
+        const spark = document.createElement("span");
+        spark.className = "emoji-spark";
+        spark.textContent = emoji[index % emoji.length];
+        spark.style.setProperty("--spark-x", `${-100 + Math.random() * 210}px`);
+        spark.style.setProperty("--spark-y", `${-80 + Math.random() * 150}px`);
+        spark.style.setProperty("--spark-r", `${-80 + Math.random() * 160}deg`);
+        spark.style.animationDelay = `${index * 22}ms`;
+        portraitStage.appendChild(spark);
+        window.setTimeout(() => spark.remove(), 1200);
+      }
+    }
+
+    function sayHello() {
+      window.clearTimeout(greetingTimer);
+      greeting.textContent = greetings[greetingIndex];
+      greetingIndex = (greetingIndex + 1) % greetings.length;
+      greeting.classList.add("is-visible");
+      avatarButton.classList.remove("is-hello");
+      void avatarButton.offsetWidth;
+      avatarButton.classList.add("is-hello");
+      createEmojiBurst();
+      window.setTimeout(() => avatarButton.classList.remove("is-hello"), 820);
+      greetingTimer = window.setTimeout(() => greeting.classList.remove("is-visible"), 2300);
+    }
+
+    themeToggle.addEventListener("click", () => setTheme(root.dataset.theme === "light" ? "dark" : "light"));
+    langToggle.addEventListener("click", () => { currentLang = currentLang === "zh" ? "en" : "zh"; applyLanguage(); });
+    avatarButton.addEventListener("click", sayHello);
+    helloButton.addEventListener("click", sayHello);
+
+    portraitStage.addEventListener("pointermove", (event) => {
+      if (event.pointerType === "touch" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const rect = portraitStage.getBoundingClientRect();
+      const rotateY = ((event.clientX - rect.left) / rect.width - 0.5) * 9;
+      const rotateX = ((event.clientY - rect.top) / rect.height - 0.5) * -9;
+      avatarButton.style.animation = "none";
+      avatarButton.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+
+    portraitStage.addEventListener("pointerleave", () => {
+      avatarButton.style.transform = "";
+      avatarButton.style.animation = "";
+    });
+
+    document.querySelectorAll(".interest-float").forEach((button) => {
+      button.addEventListener("click", () => {
+        activeInterest = button.dataset.interest;
+        renderInterest();
+      });
+    });
+
+    document.getElementById("quoteStrip").addEventListener("click", () => {
+      quoteIndex = (quoteIndex + 1) % quotes[currentLang].length;
+      renderQuote();
+    });
+
+    const profileTabs = Array.from(document.querySelectorAll(".profile-tab"));
+    profileTabs.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        activeProfile = button.dataset.profile;
+        profileTabs.forEach((item) => item.setAttribute("aria-selected", String(item === button)));
+        document.getElementById("profilePanel").setAttribute("aria-labelledby", button.id);
+        renderProfile();
+      });
+
+      button.addEventListener("keydown", (event) => {
+        if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+        event.preventDefault();
+        const nextIndex = (index + (event.key === "ArrowRight" ? 1 : -1) + profileTabs.length) % profileTabs.length;
+        profileTabs[nextIndex].focus();
+      });
+    });
+
+    document.querySelectorAll(".method-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        activeMethod = button.dataset.method;
+        document.querySelectorAll(".method-button").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+        renderMethod();
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+    window.addEventListener("scroll", () => topbar.classList.toggle("is-scrolled", window.scrollY > 30), { passive: true });
+
+    setTheme(localStorage.getItem("zymct_theme_preference") || "light");
+    applyLanguage();
+  </script>
+</body>
+</html>
