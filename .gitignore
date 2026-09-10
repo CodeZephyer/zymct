@@ -8,10 +8,14 @@
 .dev.vars
 .dev.vars.*
 
-# 依赖、构建产物与本地缓存
+# 依赖与本地缓存
 node_modules/
-dist/
 .wrangler/
+
+# Cloudflare creates `dist/index.html`; only the author-page mirror is tracked.
+dist/*
+!dist/about/
+!dist/about/**
 
 # 编辑器与日志
 .idea/
