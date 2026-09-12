@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <meta name="description" content="ZYMCT - 流畅安全的致月生态矩阵">
-  <meta name="theme-color" content="#f8fafc">
+  <meta name="theme-color" content="#f8fbfd">
   
   <!-- Cloudflare 底层网络优化 -->
   <link rel="dns-prefetch" href="https://yejzzy.com">
@@ -14,6 +14,7 @@
   
   <!-- 预加载首屏最重要的 Logo 图像资源 -->
   <link rel="preload" as="image" href="https://vip.123pan.cn/1812579799/yk6baz03t0l000dc5iqel5gy6yzv0pvaDIYPDqJ0BIU2BGxzDwU0.png">
+  <link rel="icon" type="image/png" href="https://vip.123pan.cn/1812579799/yk6baz03t0l000dc5iqel5gy6yzv0pvaDIYPDqJ0BIU2BGxzDwU0.png">
   
   <meta property="og:title" content="ZYMCT · 致月生态">
   <meta property="og:description" content="探索 ZYMCT 产品矩阵。流畅、安全、且充满热爱。">
@@ -24,55 +25,57 @@
        1. 核心主题变量
        ========================================= */
     :root {
-      --bg-base: #03050a; 
-      --text-main: #f3f4f6;
-      --text-muted: #8b94a5;
-      --card-bg: rgba(255, 255, 255, 0.02);
-      --card-border: rgba(255, 255, 255, 0.05);
-      --card-hover: rgba(255, 255, 255, 0.06);
-      
-      --accent: #a78bfa;
-      --accent-blue: #60a5fa;
-      --accent-pink: #f472b6;
-      --accent-purple: #a78bfa;
-      
-      --glass-2: rgba(255, 255, 255, 0.02);
-      --glass-4: rgba(255, 255, 255, 0.04);
-      --glass-5: rgba(255, 255, 255, 0.05);
-      --glass-8: rgba(255, 255, 255, 0.08);
-      --glass-10: rgba(255, 255, 255, 0.1);
-      --glass-15: rgba(255, 255, 255, 0.15);
-      --glass-30: rgba(255, 255, 255, 0.3);
+      --bg-base: #07111f;
+      --text-main: #eef5fb;
+      --text-muted: #91a6ba;
+      --card-bg: rgba(13, 27, 44, 0.78);
+      --card-border: rgba(132, 164, 196, 0.15);
+      --card-hover: rgba(17, 36, 58, 0.92);
 
-      --btn-inner-bg: #03050a; 
-      --halo-track: transparent;
-      --halo-glow: drop-shadow(0 0 10px rgba(96, 165, 250, 0.3));
+      --accent: #5f91ef;
+      --accent-blue: #65a3ff;
+      --accent-pink: #53c6d9;
+      --accent-purple: #7aa4c7;
+
+      --glass-2: rgba(166, 197, 226, 0.025);
+      --glass-4: rgba(166, 197, 226, 0.045);
+      --glass-5: rgba(166, 197, 226, 0.065);
+      --glass-8: rgba(166, 197, 226, 0.1);
+      --glass-10: rgba(166, 197, 226, 0.13);
+      --glass-15: rgba(166, 197, 226, 0.18);
+      --glass-30: rgba(166, 197, 226, 0.3);
+
+      --btn-inner-bg: rgba(9, 20, 34, 0.96);
+      --halo-track: rgba(132, 164, 196, 0.15);
+      --halo-glow: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.24));
 
       --smooth-curve: cubic-bezier(0.16, 1, 0.3, 1);
       --spring-curve: cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     }
 
     [data-theme="light"] {
-      --bg-base: #f8fafc; 
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --card-bg: rgba(255, 255, 255, 0.85); 
-      --card-border: rgba(0, 0, 0, 0.08); 
+      --bg-base: #f8fbfd;
+      --text-main: #12213b;
+      --text-muted: #60748d;
+      --card-bg: rgba(255, 255, 255, 0.9);
+      --card-border: rgba(18, 33, 59, 0.09);
       --card-hover: rgba(255, 255, 255, 1); 
       
+      --accent: #2e63e8;
       --btn-inner-bg: #ffffff;
-      --halo-track: rgba(0, 0, 0, 0.04);
-      --halo-glow: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.06));
-      --accent-blue: #2563eb; 
-      --accent-pink: #db2777;
+      --halo-track: rgba(18, 33, 59, 0.08);
+      --halo-glow: drop-shadow(0 8px 18px rgba(18, 33, 59, 0.08));
+      --accent-blue: #2e63e8;
+      --accent-pink: #23b8d1;
+      --accent-purple: #38577a;
 
-      --glass-2: rgba(0, 0, 0, 0.02);
-      --glass-4: rgba(0, 0, 0, 0.04);
-      --glass-5: rgba(0, 0, 0, 0.05);
-      --glass-8: rgba(0, 0, 0, 0.08);
-      --glass-10: rgba(0, 0, 0, 0.1);
-      --glass-15: rgba(0, 0, 0, 0.15);
-      --glass-30: rgba(0, 0, 0, 0.3);
+      --glass-2: rgba(18, 33, 59, 0.018);
+      --glass-4: rgba(18, 33, 59, 0.035);
+      --glass-5: rgba(18, 33, 59, 0.045);
+      --glass-8: rgba(18, 33, 59, 0.075);
+      --glass-10: rgba(18, 33, 59, 0.1);
+      --glass-15: rgba(18, 33, 59, 0.14);
+      --glass-30: rgba(18, 33, 59, 0.24);
     }
 
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: none; }
@@ -92,7 +95,12 @@
       transition: background-color 0.5s var(--smooth-curve), color 0.5s var(--smooth-curve);
     }
 
-    ::selection { background: rgba(96, 165, 250, 0.3); color: #fff; }
+    ::selection { background: rgba(46, 99, 232, 0.24); color: #fff; }
+
+    :focus-visible {
+      outline: 3px solid rgba(46, 99, 232, 0.72);
+      outline-offset: 4px;
+    }
 
     /* =========================================
        3. 顶部 Logo
@@ -120,13 +128,20 @@
     .fluid-aurora {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
       z-index: -1; overflow: hidden; pointer-events: none;
-      background: var(--bg-base); transition: background-color 0.5s var(--smooth-curve);
+      background:
+        radial-gradient(ellipse 72% 52% at 12% -12%, rgba(50, 104, 174, 0.18), transparent 64%),
+        radial-gradient(ellipse 58% 42% at 94% 106%, rgba(42, 145, 158, 0.09), transparent 68%),
+        linear-gradient(180deg, #07111f 0%, #060e19 58%, #081321 100%);
+      transition: background 0.5s var(--smooth-curve);
     }
     .aurora-blob {
-      position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.25; 
+      position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0;
       animation: floatAura 25s infinite alternate linear; will-change: transform; transform: translateZ(0);
     }
-    [data-theme="light"] .aurora-blob { opacity: 0.35; }
+    [data-theme="light"] .fluid-aurora {
+      background: linear-gradient(180deg, #fbfdff 0%, #f8fbfd 52%, #f5f9fc 100%);
+    }
+    [data-theme="light"] .aurora-blob { opacity: 0; }
     .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, var(--accent-blue), transparent 60%); }
     .blob-2 { bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, var(--accent), transparent 60%); animation-duration: 30s; animation-direction: alternate-reverse; }
     .blob-3 { top: 40%; left: 30%; width: 40vw; height: 40vw; background: radial-gradient(circle, var(--accent-pink), transparent 60%); animation-duration: 35s; opacity: 0.15; }
@@ -142,9 +157,15 @@
       opacity: 0; 
       animation: fadeIn 3s ease 1s forwards;
     }
+    [data-theme="dark"] .hero-grid {
+      background-image: linear-gradient(to right, rgba(148, 180, 210, 0.025) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(148, 180, 210, 0.025) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(circle at center, black 0%, transparent 62%);
+      -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 62%);
+    }
     [data-theme="light"] .hero-grid {
-      background-image: linear-gradient(to right, var(--glass-8) 1px, transparent 1px),
-                        linear-gradient(to bottom, var(--glass-8) 1px, transparent 1px);
+      background-image: none;
     }
 
     @keyframes floatAura {
@@ -173,6 +194,12 @@
       background: conic-gradient(from 0deg, var(--accent-blue), var(--accent-pink), var(--accent-purple), var(--accent-blue) var(--scroll-pct), var(--halo-track) var(--scroll-pct));
       transition: background 0.3s;
     }
+    [data-theme="dark"] .lang-toggle::before {
+      background: conic-gradient(from -90deg, #5f91ef 0deg, #53c6d9 var(--scroll-pct), rgba(132, 164, 196, 0.15) var(--scroll-pct), rgba(132, 164, 196, 0.15) 360deg);
+    }
+    [data-theme="light"] .lang-toggle::before {
+      background: conic-gradient(from -90deg, #2e63e8 0deg, #23b8d1 var(--scroll-pct), rgba(18, 33, 59, 0.1) var(--scroll-pct), rgba(18, 33, 59, 0.1) 360deg);
+    }
     .lang-toggle-inner {
       display: flex; align-items: center; gap: 6px; margin: 2px; padding: 8px 16px;
       background: var(--btn-inner-bg); border-radius: 99px; color: var(--text-main); font-size: 14px; font-weight: 600;
@@ -193,6 +220,18 @@
     .hero-landing { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; perspective: 1200px; }
     
     .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 99px; background: var(--glass-5); border: 1px solid var(--glass-10); color: var(--text-muted); font-size: 0.85rem; font-weight: 500; margin-bottom: 32px; letter-spacing: 2px; animation: fadeInDown 1.5s var(--smooth-curve) 0.4s forwards; opacity: 0; position: relative; z-index: 2; }
+    [data-theme="dark"] .badge {
+      background: rgba(14, 28, 45, 0.78);
+      border-color: rgba(144, 177, 207, 0.16);
+      color: #a9bacb;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 12px 30px rgba(0, 0, 0, 0.18);
+    }
+    [data-theme="light"] .badge {
+      background: rgba(236, 243, 248, 0.78);
+      border-color: rgba(56, 87, 122, 0.18);
+      color: #38577a;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 8px 24px rgba(18, 33, 59, 0.045);
+    }
 
     /* 摄影级失焦拉近特效 (Cinematic Focus Pull) */
     @keyframes cinematicReveal {
@@ -207,13 +246,23 @@
       letter-spacing: -2px; 
       margin: 0; 
       line-height: 1.1; 
-      background: linear-gradient(135deg, #ffffff, #e0e7ff, #a78bfa, #60a5fa); 
-      background-size: 200% 200%; 
+      background: linear-gradient(
+        108deg,
+        #f3f8fc 0%,
+        #dce9f3 18%,
+        #7899b7 31%,
+        #78c8d6 42%,
+        #5f91ef 53%,
+        #abc9e4 66%,
+        #f3f8fc 80%,
+        #6799ef 100%
+      );
+      background-size: 225% 100%;
       -webkit-background-clip: text; 
       color: transparent; 
       /* 结合色彩流转与电影级对焦出场 */
-      animation: gradientFlow 10s ease infinite, cinematicReveal 2s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
-      text-shadow: 0 0 40px rgba(96, 165, 250, 0.2), 0 0 80px rgba(167, 139, 250, 0.1); 
+      animation: nightGlacierFlow 24s cubic-bezier(0.45, 0, 0.2, 1) infinite, cinematicReveal 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      text-shadow: 0 18px 54px rgba(0, 5, 14, 0.34), 0 1px 0 rgba(255, 255, 255, 0.1);
       opacity: 0; 
       z-index: 2; 
       text-align: center;
@@ -221,7 +270,27 @@
       will-change: transform, filter, opacity;
       transition: transform 0.15s cubic-bezier(0.1, 1, 0.3, 1); /* 极致跟手的阻尼感 */
     }
-    [data-theme="light"] .hero-glow-title { background: linear-gradient(135deg, #0f172a, #334155, #a78bfa, #3b82f6); -webkit-background-clip: text; text-shadow: 0 0 40px rgba(96, 165, 250, 0.3), 0 0 80px rgba(167, 139, 250, 0.2); }
+    [data-theme="light"] .hero-glow-title {
+      background-image: linear-gradient(
+        108deg,
+        #12213b 0%,
+        #1c3154 14%,
+        #38577a 24%,
+        #b9e4ed 34%,
+        #2e63e8 44%,
+        #3f86e5 57%,
+        #23b8d1 70%,
+        #a8e4ec 80%,
+        #2e63e8 90%,
+        #12213b 100%
+      );
+      background-size: 230% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      text-shadow: 0 18px 42px rgba(18, 33, 59, 0.07);
+      animation: glacierFlow 20s cubic-bezier(0.45, 0, 0.2, 1) infinite, cinematicReveal 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      will-change: background-position, transform, filter, opacity;
+    }
 
     /* Apple-style Hello Animation */
     .apple-hello-wrapper {
@@ -264,7 +333,7 @@
       animation: fadeIn 2s 1.5s forwards; cursor: pointer; opacity: 0; z-index: 2; padding: 10px; 
     }
     .scroll-prompt span { opacity: 0.6; font-weight: 500; transition: opacity 0.3s; }
-    .scroll-prompt svg { width: 24px; height: 24px; color: var(--accent-blue); filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.6)); animation: arrowBounce 2s infinite ease-in-out; }
+    .scroll-prompt svg { width: 24px; height: 24px; color: var(--accent-blue); filter: drop-shadow(0 4px 8px rgba(46, 99, 232, 0.24)); animation: arrowBounce 2s infinite ease-in-out; }
 
     /* =========================================
        Slogan 视觉张力重构
@@ -340,7 +409,7 @@
       transform-style: preserve-3d;
       will-change: transform, box-shadow; /* 开启性能加速 */
     }
-    [data-theme="light"] .bento-card { box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
+    [data-theme="light"] .bento-card { box-shadow: 0 10px 34px rgba(18, 33, 59, 0.055); }
     
     /* 注入磁性探照灯 (Spotlight) 伪元素 */
     .bento-card::before {
@@ -358,8 +427,8 @@
     }
     
     /* 基础悬停发光 */
-    .bento-card:hover { border-color: rgba(167, 139, 250, 0.4); box-shadow: 0 24px 48px rgba(0,0,0,0.4), 0 0 24px rgba(167, 139, 250, 0.1); }
-    [data-theme="light"] .bento-card:hover { border-color: rgba(96, 165, 250, 0.4); box-shadow: 0 24px 48px rgba(0,0,0,0.08), 0 0 24px rgba(96, 165, 250, 0.15); }
+    .bento-card:hover { border-color: rgba(101, 163, 255, 0.3); box-shadow: 0 24px 48px rgba(0, 4, 12, 0.3), 0 0 24px rgba(83, 198, 217, 0.055); }
+    [data-theme="light"] .bento-card:hover { border-color: rgba(46, 99, 232, 0.28); box-shadow: 0 24px 48px rgba(18, 33, 59, 0.085), 0 0 22px rgba(35, 184, 209, 0.08); }
     .bento-card:hover::before { opacity: 1; }
     .bento-card:active { transform: scale3d(0.98, 0.98, 0.98) !important; box-shadow: 0 12px 24px rgba(0,0,0,0.3); }
     [data-theme="light"] .bento-card:active { box-shadow: 0 12px 24px rgba(0,0,0,0.05); }
@@ -400,9 +469,11 @@
 
     /* 状态卡片屏蔽动效 */
     .bento-card.status-card:hover { transform: none !important; box-shadow: none; border-color: var(--card-border); background: var(--card-bg); }
-    [data-theme="light"] .bento-card.status-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.06); border-color: var(--card-border); }
+    [data-theme="dark"] .bento-card.status-card { background: rgba(50, 105, 170, 0.055) !important; }
+    [data-theme="light"] .bento-card.status-card { background: rgba(46, 99, 232, 0.032) !important; }
+    [data-theme="light"] .bento-card.status-card:hover { box-shadow: 0 10px 34px rgba(18, 33, 59, 0.055); border-color: var(--card-border); }
     .bento-card.status-card:active { transform: none !important; box-shadow: none; }
-    [data-theme="light"] .bento-card.status-card:active { box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
+    [data-theme="light"] .bento-card.status-card:active { box-shadow: 0 10px 34px rgba(18, 33, 59, 0.055); }
     .bento-card.status-card::before { display: none; }
 
     .card-link-icon { position: absolute; top: 32px; right: 32px; color: var(--text-muted); opacity: 0; transform: translate(-10px, 10px); transition: all 0.4s var(--smooth-curve); width: 20px; height: 20px; z-index: 5; pointer-events: none; }
@@ -416,8 +487,8 @@
     .bento-card p { margin: 0; color: var(--text-muted); font-size: 1rem; flex-grow: 1; line-height: 1.6; position: relative; z-index: 2; pointer-events: none; }
     
     /* 核心矩阵高亮特效 */
-    .card-highlight { background: linear-gradient(135deg, rgba(96,165,250,0.06), rgba(167,139,250,0.02)); border-color: rgba(167,139,250,0.12); }
-    [data-theme="light"] .card-highlight { background: linear-gradient(135deg, rgba(96,165,250,0.15), rgba(167,139,250,0.08)); border-color: rgba(167,139,250,0.3); }
+    .card-highlight { background: linear-gradient(135deg, rgba(95,145,239,0.1), rgba(83,198,217,0.035)); border-color: rgba(101,163,255,0.19); }
+    [data-theme="light"] .card-highlight { background: linear-gradient(135deg, rgba(46,99,232,0.105), rgba(35,184,209,0.055)); border-color: rgba(46,99,232,0.2); }
     .card-highlight .card-icon { color: var(--accent); }
 
     /* Key Safe 纯排版专属样式 */
@@ -439,7 +510,7 @@
     .version-tags { display: flex; align-items: center; gap: 6px; margin-bottom: 16px; font-size: 0.75rem; font-weight: 600; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; position: relative; z-index: 2; pointer-events: none; }
     .version-tags span { padding: 4px 8px; border-radius: 6px; background: var(--glass-5); color: var(--text-muted); transition: all 0.3s ease; }
     .version-tags svg { width: 12px; height: 12px; color: var(--text-muted); opacity: 0.5; }
-    .version-tags span.current { color: var(--accent-blue); background: rgba(96,165,250,0.15); border: 1px solid rgba(96,165,250,0.25); box-shadow: 0 0 10px rgba(96,165,250,0.2); }
+    .version-tags span.current { color: var(--accent-blue); background: rgba(46,99,232,0.11); border: 1px solid rgba(46,99,232,0.2); box-shadow: 0 0 10px rgba(46,99,232,0.12); }
     
     .slogan-text { font-size: 1.1rem; font-weight: 500; color: var(--text-main); margin-bottom: 12px !important; font-style: italic; opacity: 0.9; }
 
@@ -448,8 +519,8 @@
     .action-btn:active { transform: scale(0.95) !important; }
     .action-btn.secondary { background: var(--glass-5); border: 1px solid var(--glass-10); color: var(--text-main); }
     .action-btn.secondary:hover { background: var(--glass-15); border-color: var(--glass-30); transform: translateY(-2px); }
-    .action-btn.primary { background: linear-gradient(135deg, var(--accent-blue), #3b82f6); color: #fff; border: 1px solid rgba(96, 165, 250, 0.5); box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); }
-    .action-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(59, 130, 246, 0.5); }
+    .action-btn.primary { background: linear-gradient(135deg, #244fc7, var(--accent-blue) 55%, #358bdc); color: #fff; border: 1px solid rgba(46, 99, 232, 0.46); box-shadow: 0 5px 14px rgba(46, 99, 232, 0.24); }
+    .action-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 9px 22px rgba(46, 99, 232, 0.34); }
     .action-btn.primary svg { width: 16px; height: 16px; margin-left: 6px; }
 
     /* ZYMCT Emby 专属高级纯文字排版 */
@@ -471,7 +542,7 @@
       -webkit-background-clip: text;
     }
 
-    .notice-box { margin-top: 16px; padding: 12px 16px; background: rgba(96, 165, 250, 0.08); border-left: 3px solid var(--accent-blue); border-radius: 0 8px 8px 0; font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; pointer-events: none; }
+    .notice-box { margin-top: 16px; padding: 12px 16px; background: rgba(46, 99, 232, 0.065); border-left: 3px solid var(--accent-blue); border-radius: 0 8px 8px 0; font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; pointer-events: none; }
     .notice-box svg { width: 16px; height: 16px; color: var(--accent-blue); flex-shrink: 0; margin-top: 2px; }
 
     /* 状态卡片 & 社交链 */
@@ -484,7 +555,7 @@
     .social-icon { height: 40px; border-radius: 99px; padding: 0 16px; background: var(--glass-5); border: 1px solid var(--glass-8); display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--text-main); transition: all 0.4s var(--spring-curve); text-decoration: none; font-size: 0.9rem; font-weight: 500; white-space: nowrap; }
     .social-icon svg { width: 18px; height: 18px; fill: currentColor; }
     .social-icon.email-icon svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .social-icon:hover { background: var(--accent-blue); border-color: var(--accent-blue); color: #fff; transform: translateY(-4px) scale(1.03); box-shadow: 0 8px 20px rgba(96, 165, 250, 0.4); }
+    .social-icon:hover { background: var(--accent-blue); border-color: var(--accent-blue); color: #fff; transform: translateY(-4px) scale(1.03); box-shadow: 0 8px 20px rgba(46, 99, 232, 0.3); }
     .social-icon:active { transform: scale(0.92) !important; }
     .social-icon.disabled { opacity: 0.4; pointer-events: none; cursor: not-allowed; filter: grayscale(100%); background: transparent; }
 
@@ -569,6 +640,18 @@
        关键帧动画
        ========================================= */
     @keyframes gradientFlow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    @keyframes nightGlacierFlow {
+      0% { background-position: 0% 50%; }
+      46% { background-position: 34% 50%; }
+      54% { background-position: 34% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes glacierFlow {
+      0% { background-position: 0% 50%; }
+      46% { background-position: 35% 50%; }
+      54% { background-position: 35% 50%; }
+      100% { background-position: 0% 50%; }
+    }
     @keyframes arrowBounce { 0%, 100% { transform: translateY(0); opacity: 0.4; } 50% { transform: translateY(8px); opacity: 1; } }
     @keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
     @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
@@ -633,6 +716,7 @@
     
     @media (prefers-reduced-motion: reduce) {
       .aurora-blob, .hero-glow-title, .badge-dot, .slogan-brand { animation: none !important; }
+      .hero-glow-title { opacity: 1 !important; transform: none !important; filter: none !important; background-position: 50% 50%; }
       .reveal { transition: none; opacity: 1; transform: none; }
       .apple-hello-text { transition: none; opacity: 1; filter: none; transform: none; }
       .bento-card { transition: none; transform: none !important; }
@@ -903,7 +987,7 @@
     function applyTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem(themeStorageKey, theme);
-      document.querySelector('meta[name="theme-color"]').content = theme === 'light' ? '#f8fafc' : '#03050a';
+      document.querySelector('meta[name="theme-color"]').content = theme === 'light' ? '#f8fbfd' : '#07111f';
       if (theme === 'light') {
         footerLogoImg.src = bottomLogoBlack;
       } else {
