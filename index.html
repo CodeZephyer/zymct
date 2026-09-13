@@ -625,16 +625,218 @@
     }
 
     /* =========================================
-       极简页脚 
+       产品目录页脚
        ========================================= */
-    .footer-wrapper { border-top: 1px solid var(--card-border); padding: 40px 20px 60px; }
-    .footer { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; color: var(--text-muted); opacity: 0.8; }
-    .footer-left { font-size: 0.95rem; font-weight: 500; letter-spacing: 1px; display: flex; flex-direction: column; gap: 4px; }
-    .footer-cf { font-size: 0.75rem; opacity: 0.7; display: flex; align-items: center; gap: 6px; }
-    .footer-cf svg { width: 14px; height: 14px; color: var(--accent-blue); }
-    
-    .footer-logo { height: 18px; width: auto; aspect-ratio: 9081 / 652; object-fit: contain; opacity: 1; user-select: none; -webkit-user-drag: none; cursor: pointer; transition: transform 0.2s var(--smooth-curve); margin-bottom: 2px; }
-    .footer-logo:active { transform: scale(0.92); }
+    .footer-wrapper {
+      --footer-bg: #11161d;
+      --footer-bg-deep: #0d1218;
+      --footer-text: #f4f7fb;
+      --footer-muted: #9aa7b8;
+      --footer-subtle: #6f7d8f;
+      --footer-rule: rgba(214, 225, 237, 0.14);
+      --footer-live: #63d5b0;
+      --footer-accent: #70a2ff;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(18, 33, 59, 0.08);
+      padding: 56px max(clamp(24px, 4vw, 64px), env(safe-area-inset-right)) max(34px, calc(34px + env(safe-area-inset-bottom))) max(clamp(24px, 4vw, 64px), env(safe-area-inset-left));
+      color: var(--footer-text);
+      background: var(--footer-bg);
+    }
+    [data-theme="dark"] .footer-wrapper {
+      --footer-bg: #080e15;
+      --footer-bg-deep: #060b10;
+      --footer-muted: #93a3b5;
+      --footer-rule: rgba(194, 212, 230, 0.12);
+      border-top-color: rgba(153, 183, 211, 0.12);
+    }
+    .footer {
+      width: min(1400px, 100%);
+      margin: 0 auto;
+      color: inherit;
+    }
+    .footer-main {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.82fr) minmax(0, 4.7fr);
+      gap: clamp(42px, 5vw, 84px);
+      align-items: start;
+    }
+    .footer-brand {
+      min-width: 0;
+    }
+    .footer-brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+    .footer-logo {
+      width: 58px;
+      height: 40px;
+      object-fit: contain;
+      opacity: 1;
+      user-select: none;
+      -webkit-user-drag: none;
+      cursor: pointer;
+      transition: transform 0.2s var(--smooth-curve);
+    }
+    .footer-logo:active { transform: scale(0.94); }
+    .footer-brand-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .footer-brand-copy strong {
+      color: #fff;
+      font-size: 1.03rem;
+      line-height: 1.2;
+      font-weight: 720;
+    }
+    .footer-brand-copy span {
+      color: var(--footer-muted);
+      font-size: 0.75rem;
+      line-height: 1.35;
+    }
+    .footer-peace {
+      margin: 24px 0 0;
+      color: #b2bdca;
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+    .footer-directory {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 32px;
+    }
+    .footer-column {
+      min-width: 0;
+    }
+    .footer-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 0 0 19px;
+      color: #fff;
+      font-size: 0.84rem;
+      line-height: 1.35;
+      font-weight: 680;
+      list-style: none;
+      cursor: default;
+      pointer-events: none;
+    }
+    .footer-summary::-webkit-details-marker { display: none; }
+    .footer-chevron {
+      display: none;
+      flex: 0 0 auto;
+      width: 19px;
+      height: 19px;
+      color: #dbe2eb;
+      transition: transform 0.28s var(--smooth-curve);
+    }
+    .footer-column[open] .footer-chevron {
+      transform: rotate(180deg);
+    }
+    .footer-column.is-closing .footer-chevron {
+      transform: rotate(0deg);
+    }
+    .footer-list {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .footer-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: baseline;
+      min-height: 20px;
+      color: var(--footer-muted);
+      font-size: 0.78rem;
+      line-height: 1.45;
+      transition: color 0.25s var(--smooth-curve), transform 0.25s var(--smooth-curve);
+    }
+    .footer-item:hover {
+      color: var(--footer-text);
+      transform: translateX(2px);
+    }
+    .footer-item-name {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .footer-item-status {
+      color: var(--footer-subtle);
+      font-size: 0.62rem;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+    .footer-item-status.is-live { color: var(--footer-live); }
+    .footer-item-status.is-partner { color: var(--footer-accent); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      margin-top: 48px;
+      padding-top: 22px;
+      border-top: 1px solid var(--footer-rule);
+      color: var(--footer-muted);
+    }
+    .footer-bottom-left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      min-width: 0;
+    }
+    .footer-socials {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-socials a {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 7px;
+      width: 46px;
+      min-height: 48px;
+      font-size: 10px;
+      line-height: 1.3;
+      color: #aeb9c7;
+      border-radius: 4px;
+      transition: color 0.22s ease, transform 0.22s var(--smooth-curve);
+    }
+    .footer-socials a:hover {
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .footer-socials svg {
+      width: 17px;
+      height: 17px;
+    }
+    .footer-legal,
+    .footer-cf {
+      font-size: 0.7rem;
+      line-height: 1.5;
+    }
+    .footer-legal { white-space: nowrap; }
+    .footer-cf {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 7px;
+      text-align: right;
+    }
+    .footer-cf-mark {
+      color: #ffd35a;
+      font-size: 0.82rem;
+      line-height: 1;
+    }
 
     /* =========================================
        关键帧动画
@@ -657,6 +859,17 @@
     @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
     @keyframes fadeIn { to { opacity: 1; } }
     @keyframes pulseDot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.8); } }
+
+    @media (max-width: 1200px) {
+      .footer-main {
+        grid-template-columns: 190px minmax(0, 1fr);
+        gap: 42px;
+      }
+      .footer-directory {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 38px;
+      }
+    }
 
     /* =========================================
        移动端专属适配 (优化性能与轻量化动效)
@@ -709,11 +922,99 @@
         width: 25px;
       }
 
-      .footer { flex-direction: column-reverse; gap: 24px; text-align: center; align-items: center; }
-      .footer-left { align-items: center; font-size: 0.85rem; }
-      .footer-logo { height: 15px; margin-bottom: 0; }
+      .footer-wrapper {
+        padding: 42px max(20px, env(safe-area-inset-right)) max(28px, calc(28px + env(safe-area-inset-bottom))) max(20px, env(safe-area-inset-left));
+      }
+      .footer {
+        display: flex;
+        flex-direction: column;
+      }
+      .footer-main {
+        display: contents;
+      }
+      .footer-brand {
+        order: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 24px;
+        padding: 34px 0 28px;
+      }
+      .footer-brand-lockup { gap: 12px; }
+      .footer-logo { width: 54px; height: 36px; }
+      .footer-peace {
+        margin: 0;
+        text-align: right;
+      }
+      .footer-directory {
+        order: 1;
+        display: block;
+        border-top: 1px solid var(--footer-rule);
+      }
+      .footer-column {
+        border-bottom: 1px solid var(--footer-rule);
+      }
+      .footer-summary {
+        min-height: 68px;
+        margin: 0;
+        padding: 20px 0;
+        scroll-margin-top: 20px;
+        font-size: 0.98rem;
+        line-height: 1.3;
+        cursor: pointer;
+        pointer-events: auto;
+        user-select: none;
+        transition: color 0.24s ease;
+      }
+      .footer-summary:hover { color: #fff; }
+      .footer-summary:focus-visible {
+        outline: 2px solid var(--footer-accent);
+        outline-offset: -2px;
+      }
+      .footer-chevron {
+        display: block;
+        transition-duration: 0.38s;
+        transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .footer-list {
+        gap: 0;
+        padding: 0 0 18px;
+        transform-origin: top;
+        will-change: opacity, transform;
+      }
+      .footer-item {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 14px;
+        min-height: 42px;
+        padding: 11px 0;
+        border-top: 1px solid rgba(214, 225, 237, 0.07);
+        font-size: 0.8rem;
+      }
+      .footer-bottom {
+        order: 3;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: 0;
+        padding-top: 24px;
+      }
+      .footer-bottom-left {
+        width: 100%;
+        justify-content: space-between;
+        gap: 18px;
+      }
+      .footer-cf { text-align: left; }
     }
-    
+
+    @media (max-width: 420px) {
+      .footer-brand {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .footer-peace { text-align: left; }
+      .footer-bottom-left { align-items: flex-start; flex-direction: column; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .aurora-blob, .hero-glow-title, .badge-dot, .slogan-brand { animation: none !important; }
       .hero-glow-title { opacity: 1 !important; transform: none !important; filter: none !important; background-position: 50% 50%; }
@@ -721,6 +1022,7 @@
       .apple-hello-text { transition: none; opacity: 1; filter: none; transform: none; }
       .bento-card { transition: none; transform: none !important; }
       .peace-icon { animation: none !important; }
+      .footer-chevron { transition: none; }
     }
   </style>
 </head>
@@ -948,30 +1250,131 @@
     </div>
   </main>
 
-  <!-- 世界和平专属水印 (Ethos Watermark) -->
-  <div class="peace-wrapper reveal" style="transition-delay: 0.4s;">
-    <div class="peace-badge">
-      <span class="peace-icon">🕊️</span>
-      <span class="peace-text" data-i18n="peace_text">愿世界和平 · Peace & Love</span>
-    </div>
-  </div>
-
-  <!-- 极简页脚 -->
+  <!-- 产品目录页脚 -->
   <div class="footer-wrapper">
-    <footer class="footer">
-      <div class="footer-left">
-        <div>&copy; 2026 ZYMCT.</div>
+    <footer class="footer" aria-label="ZYMCT 产品与项目目录">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-brand-lockup">
+            <img src="https://vip.123pan.cn/1812579799/yk6baz03t0l000dc5iqel5gy6yzv0pvaDIYPDqJ0BIU2BGxzDwU0.png" alt="ZYMCT" class="footer-logo" id="footerLogo" loading="lazy" decoding="async">
+            <div class="footer-brand-copy">
+              <strong>ZYMCT</strong>
+              <span data-i18n="footer_brand_name">致月云科技</span>
+            </div>
+          </div>
+          <p class="footer-peace" data-i18n="peace_text">愿世界和平 · Peace & Love</p>
+        </div>
+
+        <nav class="footer-directory" aria-label="产品与项目分类">
+          <details class="footer-column footer-accordion" open>
+            <summary class="footer-summary">
+              <span data-i18n="footer_category_community">社区与连接</span>
+              <i class="footer-chevron" data-lucide="chevron-down" aria-hidden="true"></i>
+            </summary>
+            <ul class="footer-list">
+              <li class="footer-item"><span class="footer-item-name" data-i18n="footer_product_community">致月社区</span><span class="footer-item-status" data-i18n="state_adjusting">调整中</span></li>
+              <li class="footer-item"><span class="footer-item-name">2Infinity</span><span class="footer-item-status" data-i18n="state_rebuilding">重构中</span></li>
+            </ul>
+          </details>
+
+          <details class="footer-column footer-accordion" open>
+            <summary class="footer-summary">
+              <span data-i18n="footer_category_tools">工具与安全</span>
+              <i class="footer-chevron" data-lucide="chevron-down" aria-hidden="true"></i>
+            </summary>
+            <ul class="footer-list">
+              <li class="footer-item"><span class="footer-item-name">FlowConvert</span><span class="footer-item-status is-live" data-i18n="state_online">在线</span></li>
+              <li class="footer-item"><span class="footer-item-name">ZYMCT Key Safe</span><span class="footer-item-status is-live" data-i18n="state_online">在线</span></li>
+            </ul>
+          </details>
+
+          <details class="footer-column footer-accordion" open>
+            <summary class="footer-summary">
+              <span data-i18n="footer_category_media">影音与创作</span>
+              <i class="footer-chevron" data-lucide="chevron-down" aria-hidden="true"></i>
+            </summary>
+            <ul class="footer-list">
+              <li class="footer-item"><span class="footer-item-name">ZYMCT Emby</span><span class="footer-item-status is-live" data-i18n="state_online">在线</span></li>
+              <li class="footer-item"><span class="footer-item-name" data-i18n="footer_product_mctpc">致月摄影大赛 MCTPC</span><span class="footer-item-status" data-i18n="state_archived">已归档</span></li>
+              <li class="footer-item"><span class="footer-item-name" data-i18n="footer_product_photo_studio">致月摄影工作室</span><span class="footer-item-status" data-i18n="footer_status_historical">历史项目</span></li>
+            </ul>
+          </details>
+
+          <details class="footer-column footer-accordion" open>
+            <summary class="footer-summary">
+              <span data-i18n="footer_category_campus">校园与公益</span>
+              <i class="footer-chevron" data-lucide="chevron-down" aria-hidden="true"></i>
+            </summary>
+            <ul class="footer-list">
+              <li class="footer-item"><span class="footer-item-name" data-i18n="footer_product_campus">ZY校园工作室</span><span class="footer-item-status" data-i18n="footer_status_historical">历史项目</span></li>
+              <li class="footer-item"><span class="footer-item-name" data-i18n="footer_product_spark">SPARK 青年公益</span><span class="footer-item-status" data-i18n="state_adjusting">调整中</span></li>
+            </ul>
+          </details>
+
+          <details class="footer-column footer-accordion" open>
+            <summary class="footer-summary">
+              <span data-i18n="footer_category_studio">工作室</span>
+              <i class="footer-chevron" data-lucide="chevron-down" aria-hidden="true"></i>
+            </summary>
+            <ul class="footer-list">
+              <li class="footer-item"><span class="footer-item-name" data-i18n="footer_about_us">关于我们</span></li>
+              <li class="footer-item"><span class="footer-item-name" data-i18n="footer_creator">认识作者</span></li>
+              <li class="footer-item"><span class="footer-item-name" data-i18n="footer_contact">联系我们</span></li>
+              <li class="footer-item"><span class="footer-item-name">EnjoyCloud</span><span class="footer-item-status is-partner" data-i18n="footer_status_partner">合作伙伴</span></li>
+            </ul>
+          </details>
+
+          <details class="footer-column footer-accordion" open>
+            <summary class="footer-summary">
+              <span data-i18n="footer_category_archive">历史实验</span>
+              <i class="footer-chevron" data-lucide="chevron-down" aria-hidden="true"></i>
+            </summary>
+            <ul class="footer-list">
+              <li class="footer-item"><span class="footer-item-name" data-i18n="footer_product_work_platform">ZY创新型工作平台</span><span class="footer-item-status" data-i18n="footer_status_paused">暂停</span></li>
+            </ul>
+          </details>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <div class="footer-socials" aria-label="社交媒体">
+            <a href="mailto:opzymct@outlook.com" aria-label="邮箱">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              <span data-i18n="social_email">邮箱</span>
+            </a>
+            <a href="https://x.com/zymct?s=21" target="_blank" rel="noopener" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>
+              <span>X</span>
+            </a>
+            <a href="https://www.tiktok.com/@zymct2?_r=1&amp;_t=ZS-94GdXfYdhK4" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 448 512" fill="currentColor"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0h88a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z"></path></svg>
+              <span>TikTok</span>
+            </a>
+            <a href="https://v.douyin.com/ygwnyqazBGY/" target="_blank" rel="noopener" aria-label="抖音（国内版）">
+              <svg viewBox="0 0 448 512" fill="currentColor"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0h88a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z"></path></svg>
+              <span>抖音</span>
+            </a>
+            <a href="https://youtube.com/@mooncloudstudio?si=geLQjHGY7gBuH4ps" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <span>YouTube</span>
+            </a>
+            <a href="https://b23.tv/wqd8Cyf" target="_blank" rel="noopener" aria-label="Bilibili">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.764-.28-1.395-.786-1.893-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"></path></svg>
+              <span>Bilibili</span>
+            </a>
+          </div>
+          <div class="footer-legal">&copy; 2026 ZYMCT.</div>
+        </div>
         <div class="footer-cf">
-          <span>⚡️</span>
+          <span class="footer-cf-mark" aria-hidden="true">&#9889;</span>
           <span data-i18n="footer_cf">全球网络由 Cloudflare 强力驱动</span>
         </div>
-      </div>
-      <div class="footer-right">
-        <img src="https://vip.123pan.cn/1812579799/yk6baz03t0m000dc5iqel5gqt5zuzavpDIYPDqJ0BIU2BGxzDwU0.png" alt="ZYMCT Footer Logo" class="footer-logo" id="footerLogo" loading="lazy" decoding="async">
       </div>
     </footer>
   </div>
 
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
   <script>
     // =========================================
     // 明暗主题系统
@@ -981,8 +1384,8 @@
     const themeStorageKey = 'zymct_theme_preference';
     let currentTheme = localStorage.getItem(themeStorageKey) || 'light';
 
-    const bottomLogoWhite = "https://vip.123pan.cn/1812579799/yk6baz03t0m000dc5iqel5gqt5zuzavpDIYPDqJ0BIU2BGxzDwU0.png";
-    const bottomLogoBlack = "https://vip.123pan.cn/1812579799/ymjew503t0l000dc5csd5b1yf2vgrgfzDIYPDqJ0BIU2BGxzDwU0.png";
+    const bottomLogoWhite = "https://vip.123pan.cn/1812579799/yk6baz03t0l000dc5iqel5gy6yzv0pvaDIYPDqJ0BIU2BGxzDwU0.png";
+    const bottomLogoBlack = "https://vip.123pan.cn/1812579799/yk6baz03t0l000dc5iqel5gy6yzv0pvaDIYPDqJ0BIU2BGxzDwU0.png";
 
     function applyTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
@@ -1160,7 +1563,26 @@
         about_btn_author: "认识作者",
         about_btn_link3: "前往 Link3 官网",
         footer_cf: "全球网络由 Cloudflare 强力驱动",
-        peace_text: "愿世界和平 · Peace & Love"
+        peace_text: "愿世界和平 · Peace & Love",
+        footer_brand_name: "致月云科技",
+        footer_category_community: "社区与连接",
+        footer_category_tools: "工具与安全",
+        footer_category_media: "影音与创作",
+        footer_category_campus: "校园与公益",
+        footer_category_studio: "工作室",
+        footer_category_archive: "历史实验",
+        footer_product_community: "致月社区",
+        footer_product_mctpc: "致月摄影大赛 MCTPC",
+        footer_product_photo_studio: "致月摄影工作室",
+        footer_product_campus: "ZY校园工作室",
+        footer_product_spark: "SPARK 青年公益",
+        footer_product_work_platform: "ZY创新型工作平台",
+        footer_about_us: "关于我们",
+        footer_creator: "认识作者",
+        footer_contact: "联系我们",
+        footer_status_historical: "历史项目",
+        footer_status_partner: "合作伙伴",
+        footer_status_paused: "暂停"
       },
       en: {
         badge: "Site Under Refinement · Stay Tuned",
@@ -1211,7 +1633,26 @@
         about_btn_author: "Meet the Creator",
         about_btn_link3: "Visit Link3 Profile",
         footer_cf: "Global Network Powered by Cloudflare",
-        peace_text: "World Peace · Peace & Love"
+        peace_text: "World Peace · Peace & Love",
+        footer_brand_name: "MoonCloud Technology",
+        footer_category_community: "Community & Connection",
+        footer_category_tools: "Tools & Security",
+        footer_category_media: "Media & Creation",
+        footer_category_campus: "Campus & Public Good",
+        footer_category_studio: "Studio",
+        footer_category_archive: "Past Experiments",
+        footer_product_community: "ZYMCT Community",
+        footer_product_mctpc: "MCTPC Photography Contest",
+        footer_product_photo_studio: "ZYMCT Photography Studio",
+        footer_product_campus: "ZY Campus Studio",
+        footer_product_spark: "SPARK Youth Initiative",
+        footer_product_work_platform: "ZY Innovation Work Platform",
+        footer_about_us: "About Us",
+        footer_creator: "Meet the Creator",
+        footer_contact: "Contact",
+        footer_status_historical: "Legacy",
+        footer_status_partner: "Partner",
+        footer_status_paused: "Paused"
       }
     };
 
@@ -1274,6 +1715,127 @@
     });
 
     updateLanguage();
+
+    // =========================================
+    // 手机端页脚折叠目录
+    // =========================================
+    const footerAccordions = Array.from(document.querySelectorAll('.footer-accordion'));
+    const footerMobileQuery = window.matchMedia('(max-width: 768px)');
+    const footerReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const footerAccordionAnimations = new WeakMap();
+
+    function finishFooterAnimation(group, shouldOpen, animationState) {
+      if (footerAccordionAnimations.get(group) !== animationState) return;
+
+      if (!shouldOpen) group.removeAttribute('open');
+      group.classList.remove('is-closing');
+      group.style.removeProperty('overflow');
+      animationState.container.cancel();
+      animationState.content.cancel();
+      footerAccordionAnimations.delete(group);
+
+    }
+
+    function animateFooterAccordion(group, shouldOpen) {
+      const summary = group.querySelector('summary');
+      const content = group.querySelector('.footer-list');
+      const running = footerAccordionAnimations.get(group);
+      const startHeight = group.getBoundingClientRect().height;
+
+      if (running) {
+        running.container.cancel();
+        running.content.cancel();
+        footerAccordionAnimations.delete(group);
+      }
+
+      if (shouldOpen) group.setAttribute('open', '');
+      group.classList.toggle('is-closing', !shouldOpen);
+
+      if (footerReducedMotionQuery.matches) {
+        if (!shouldOpen) group.removeAttribute('open');
+        group.classList.remove('is-closing');
+        return;
+      }
+
+      const endHeight = shouldOpen
+        ? summary.offsetHeight + content.offsetHeight
+        : summary.offsetHeight;
+
+      group.style.overflow = 'hidden';
+
+      const containerAnimation = group.animate(
+        { height: [`${startHeight}px`, `${endHeight}px`] },
+        {
+          duration: shouldOpen ? 440 : 320,
+          easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          fill: 'both'
+        }
+      );
+
+      const contentAnimation = content.animate(
+        shouldOpen
+          ? [
+              { opacity: 0, transform: 'translateY(-8px)' },
+              { opacity: 1, transform: 'translateY(0)' }
+            ]
+          : [
+              { opacity: 1, transform: 'translateY(0)' },
+              { opacity: 0, transform: 'translateY(-6px)' }
+            ],
+        {
+          duration: shouldOpen ? 340 : 220,
+          easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          fill: 'both'
+        }
+      );
+
+      const animationState = {
+        container: containerAnimation,
+        content: contentAnimation,
+        targetOpen: shouldOpen
+      };
+      footerAccordionAnimations.set(group, animationState);
+      containerAnimation.onfinish = () => finishFooterAnimation(group, shouldOpen, animationState);
+    }
+
+    function syncFooterAccordions(isMobile) {
+      footerAccordions.forEach(group => {
+        const running = footerAccordionAnimations.get(group);
+        if (running) {
+          running.container.cancel();
+          running.content.cancel();
+          footerAccordionAnimations.delete(group);
+        }
+        group.style.removeProperty('overflow');
+        group.classList.remove('is-closing');
+        group.querySelector('summary').tabIndex = isMobile ? 0 : -1;
+        if (isMobile) {
+          group.removeAttribute('open');
+        } else {
+          group.setAttribute('open', '');
+        }
+      });
+    }
+
+    footerAccordions.forEach(group => {
+      group.querySelector('summary').addEventListener('click', event => {
+        if (!footerMobileQuery.matches) return;
+
+        event.preventDefault();
+        const running = footerAccordionAnimations.get(group);
+        const isOpen = running ? running.targetOpen : group.open;
+        const shouldOpen = !isOpen;
+
+        animateFooterAccordion(group, shouldOpen);
+      });
+    });
+
+    syncFooterAccordions(footerMobileQuery.matches);
+    footerMobileQuery.addEventListener('change', event => syncFooterAccordions(event.matches));
+
+    if (window.lucide) {
+      window.lucide.createIcons({ attrs: { 'stroke-width': 2.2 } });
+    }
 
     // =========================================
     // 底部 Logo 彩蛋：专属 Emoji 向上喷泉特效
