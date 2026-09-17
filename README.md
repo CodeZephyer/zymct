@@ -13,9 +13,9 @@ Cloudflare 构建设置：
 - 当前构建命令：`mkdir -p dist && cp index.html dist/index.html`
 - 构建输出目录：`dist`
 
-仓库保留 `dist/about/` 的发布镜像，现有构建命令负责生成 `dist/index.html`；两部分组合后即可发布主站、作者页和静态资源，因此 Cloudflare 设置无需立即修改。Cloudflare Pages 支持子目录页面，每个页面目录使用自己的 `index.html` 即可。
+仓库保留 `dist/about/` 和 `dist/studio/` 的发布镜像，现有构建命令负责生成 `dist/index.html`；组合后即可发布主站、作者页、关于我们和静态资源，因此 Cloudflare 设置无需立即修改。Cloudflare Pages 支持子目录页面，每个页面目录使用自己的 `index.html` 即可。
 
-后续若能修改 Cloudflare 构建设置，建议将构建命令更新为 `mkdir -p dist && cp index.html dist/index.html && cp -R about assets dist/`，从源目录自动刷新完整发布内容。
+后续若能修改 Cloudflare 构建设置，建议将构建命令更新为 `mkdir -p dist && cp index.html dist/index.html && cp -R about studio assets dist/`，从源目录自动刷新完整发布内容。
 
 修改并检查 `index.html` 后，将改动提交到 GitHub 的 `main` 分支；Cloudflare 完成部署后，主站即更新。可在 Cloudflare 的部署记录中查看结果或回退版本。
 

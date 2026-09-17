@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="认识致月云科技 ZYMCT：始于 2021 年的学生工作室，关于社区、摄影、校园项目，以及名字背后的故事。">
+<meta name="theme-color" content="#ffffff">
+<script>
+try{document.documentElement.dataset.theme=localStorage.getItem('zymct_theme_preference')==='dark'?'dark':'light'}catch{document.documentElement.dataset.theme='light'}
+document.querySelector('meta[name="theme-color"]').content=document.documentElement.dataset.theme==='dark'?'#171a17':'#ffffff';
+</script>
+<title>关于致月 · ZYMCT</title>
+<style>
+:root{--bg:#fff;--fg:#20221f;--muted:#787d77;--line:#e3e6e1;--soft:#f4f6f2;--green:#436c4d;--accent:#d6f37f;--ink:#293526;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:0;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:5px}svg{width:20px;height:20px;flex-shrink:0}.wrap{max-width:1220px;margin:auto;padding:0 48px}
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}.nav{height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}.wordmark{display:flex;align-items:center;gap:12px;font-size:21px;font-weight:750}.wordmark img{width:40px;height:32px;object-fit:contain}.nav-right{display:flex;align-items:center;gap:30px;font-size:13px}.nav-right a{color:var(--muted)}.nav-right a:hover{color:var(--fg)}.theme{width:36px;height:36px;display:grid;place-items:center;background:none;border:0;border-radius:50%}.theme:hover{background:var(--soft)}
+.intro{padding:72px 0 54px}.eyebrow{display:flex;gap:12px;align-items:center;font-size:12px;color:var(--muted);font-weight:550}.eyebrow:before{content:'';width:7px;height:7px;background:var(--green);border-radius:50%}.intro h1{font-size:92px;font-weight:650;line-height:1.12;margin:32px 0 26px}.intro h1 span{display:block;font-size:24px;font-weight:450;color:var(--muted);margin-top:19px}.intro-bottom{display:grid;grid-template-columns:1.2fr 1fr;gap:72px;align-items:end}.intro-bottom h2{font-size:32px;line-height:1.5;font-weight:500;margin:0}.intro-bottom p{font-size:15px;line-height:1.95;color:var(--muted);margin:0;max-width:450px}.meta{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding:24px 0;margin-top:48px;color:var(--muted);font-size:12px}.meta span{display:flex;align-items:center;gap:8px}.meta a{display:flex;align-items:center;gap:12px;color:var(--fg)}
+.chapter{padding:72px 0;border-top:1px solid var(--line)}.section-top{display:flex;align-items:start;justify-content:space-between;gap:24px;margin-bottom:40px}.index{font-size:12px;line-height:1.6;color:var(--muted);display:flex;gap:16px;padding-top:9px}.index b{color:var(--green);font-weight:500}.section-top h2{font-size:36px;font-weight:550;line-height:1.3;margin:0;max-width:700px;width:68%}.section-top h2 span{color:var(--muted)}
+.exploration{background:var(--soft)}.tabs{display:flex;gap:32px;border-bottom:1px solid var(--line);margin-left:32%;margin-bottom:36px}.tabs button{border:0;border-bottom:2px solid transparent;padding:0 0 16px;background:none;color:var(--muted);font-size:14px;white-space:nowrap}.tabs button[aria-selected=true]{color:var(--fg);border-color:var(--green)}.direction{display:grid;grid-template-columns:32% 1fr;min-height:230px}.direction-symbol{display:flex;align-items:flex-start;padding:20px 0}.direction-symbol svg{width:82px;height:82px;color:var(--green);stroke-width:1}.direction-main>p{font-size:17px;line-height:1.9;margin:0 0 30px;max-width:600px}.project-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 30px}.project{padding:18px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px}.project strong{font-size:15px;font-weight:550}.project small{font-size:12px;color:var(--muted);line-height:1.6}.direction-main{animation:appear .35s ease both}@keyframes appear{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.journey{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;padding-top:18px}.milestone{border-top:1px solid var(--line);padding-top:22px}.milestone .number{font-size:12px;color:var(--muted)}.milestone h3{font-size:23px;font-weight:550;margin:26px 0 12px}.milestone p{font-size:14px;line-height:1.9;color:var(--muted);margin:0;max-width:300px}.milestone:last-child{border-color:var(--green)}.milestone:last-child .number{color:var(--green)}
+.people-grid{display:grid;grid-template-columns:1.08fr 1fr;gap:70px;align-items:center}.portrait{margin:0;background:#f7f7f7;overflow:hidden;aspect-ratio:1.2}.portrait img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}.portrait:hover img{transform:scale(1.025)}.person-copy .small{font-size:12px;color:var(--muted)}.person-copy h3{font-size:30px;font-weight:550;line-height:1.5;margin:20px 0}.person-copy p{font-size:15px;line-height:1.9;color:var(--muted);margin:0 0 30px}.text-link{display:inline-flex;gap:24px;align-items:center;font-size:14px;padding:10px 0;border-bottom:1px solid var(--fg)}.text-link:hover svg{transform:translateX(4px)}.text-link svg{transition:transform .2s}.collab{margin-top:36px;display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:22px;font-size:12px;color:var(--muted)}.collab strong{font-size:14px;color:var(--fg);font-weight:500}
+.contact{background:var(--accent);color:var(--ink);padding:65px 0}.contact .wrap{display:flex;align-items:center;justify-content:space-between;gap:36px}.contact small{font-size:12px}.contact h2{font-size:38px;line-height:1.4;font-weight:550;margin:16px 0 0}.contact a{display:flex;align-items:center;gap:20px;padding:17px 0;border-bottom:1px solid #7f995d;white-space:nowrap;font-size:14px}.contact a svg{width:24px;height:24px}.footer{padding-top:35px;padding-bottom:35px;display:flex;align-items:center;justify-content:space-between;gap:24px;font-size:12px;color:var(--muted)}.footer strong{font-size:17px;font-weight:650;color:var(--fg)}.footer div{display:flex;gap:28px}.footer a:hover{color:var(--fg)}
+[data-theme=dark]{--bg:#171a17;--fg:#eef1eb;--muted:#a0a89c;--line:#343a31;--soft:#1f251e;--green:#b4d98c;color-scheme:dark}[data-theme=dark] .portrait{background:#fff}
+@media(min-width:1500px){.intro{padding-top:85px}.intro h1{font-size:104px}}
+@media(max-width:800px){.wrap{padding-left:26px;padding-right:26px}.nav{height:68px}.nav-right{gap:18px}.nav-right a:first-child{display:none}.intro{padding:48px 0 24px}.intro h1{font-size:66px;margin:30px 0}.intro h1 span{font-size:19px}.intro-bottom{grid-template-columns:1fr;gap:24px}.intro-bottom h2{font-size:27px}.intro-bottom p{font-size:14px}.meta{margin-top:32px;padding:22px 0}.chapter{padding:48px 0}.section-top{display:block;margin-bottom:30px}.index{margin-bottom:22px;padding:0}.section-top h2{width:auto;font-size:28px}.tabs{margin-left:0;gap:26px}.direction{grid-template-columns:1fr;min-height:300px}.direction-symbol{display:none}.direction-main>p{font-size:16px}.project-list{gap:0 20px}.journey{gap:24px}.milestone h3{font-size:20px}.people-grid{grid-template-columns:1fr;gap:30px}.portrait{aspect-ratio:1.3}.person-copy h3{font-size:28px}.contact{padding:44px 0}.contact .wrap{display:block}.contact h2{font-size:30px}.contact a{margin-top:24px;width:fit-content}.footer{align-items:start;flex-wrap:wrap}.footer div{gap:20px}}
+@media(max-width:480px){.intro h1{font-size:57px}.wordmark{font-size:18px}.nav-right{gap:12px}.meta{font-size:11px}.meta span{gap:5px}.meta svg{width:16px}.journey{grid-template-columns:1fr;gap:28px}.milestone{display:grid;grid-template-columns:74px 1fr;gap:10px 16px}.milestone .number{grid-row:span 2;padding-top:5px}.milestone h3{margin:0}.milestone p{grid-column:2}.contact h2{font-size:27px}.footer{row-gap:18px}.footer>span{width:100%;order:3}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+.name-origin{padding:0 0 64px}.name-origin-inner{border-top:1px solid var(--line);padding-top:32px;display:grid;grid-template-columns:32% 1fr}.name-origin h2{font-size:18px;font-weight:550;margin:0 0 10px}.name-origin .origin-caption{font-size:12px;color:var(--muted);margin:0;line-height:1.8}.name-parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;margin:0}.name-part dt{font-size:54px;line-height:1.1;font-weight:600;margin-bottom:22px}.name-part:nth-child(2) dt{color:var(--green)}.name-part:nth-child(3) dt{color:var(--muted)}.name-part dd{margin:0;padding-top:15px;border-top:1px solid var(--line)}.name-part strong{display:block;font-size:16px;font-weight:550;line-height:1.5}.name-part small{display:block;font-size:12px;color:var(--muted);line-height:1.8;margin-top:7px}.origin-note{grid-column:2;margin:24px 0 0;color:var(--muted);font-size:13px;line-height:1.8}
+@media(max-width:800px){.name-origin{padding-bottom:44px}.name-origin-inner{grid-template-columns:1fr;gap:28px}.name-parts{gap:20px}.name-part dt{font-size:42px}.origin-note{grid-column:1;margin:0}.name-part strong{font-size:14px}}
+.name-part .origin-mobile{display:none}
+@media(max-width:600px){
+  .name-origin{padding:0 26px 40px;scroll-margin-top:88px}
+  .name-origin-inner{gap:26px;padding-top:26px}
+  .name-origin h2{font-size:20px;margin-bottom:8px}
+  .name-origin .origin-caption{max-width:260px;line-height:1.8}
+  .name-parts{grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+  .name-part{min-width:0;padding:0 10px;text-align:center}
+  .name-part:first-child{padding-left:0}
+  .name-part:last-child{padding-right:0}
+  .name-part+.name-part{border-left:1px solid var(--line)}
+  .name-part dt{font-size:42px;line-height:1;margin:0 0 22px}
+  .name-part dd{padding:0;border:0}
+  .name-part strong{font-size:12px;line-height:20px;overflow-wrap:anywhere}
+  .name-part small{font-size:11px;margin-top:7px;line-height:1.8}
+  .name-part .origin-desktop{display:none}
+  .name-part .origin-mobile{display:block}
+  .origin-note{font-size:12px;text-align:center;margin:0;padding-top:20px;border-top:1px solid var(--line)}
+}
+</style>
+<style>
+.project strong{display:flex;align-items:baseline;justify-content:space-between;gap:10px}.project strong svg{width:16px;height:16px;align-self:center}.project-link:hover strong{color:var(--green)}.project-link small{color:var(--muted)}.project{min-width:0;overflow-wrap:anywhere}.archive-note{margin:30px 0 0;padding-top:20px;border-top:1px solid var(--line);font-size:13px;line-height:1.9;color:var(--muted)}.archive-note strong{color:var(--fg);font-weight:550}.collab{flex-wrap:wrap}.collab span{max-width:660px;line-height:1.9}
+</style>
+<style>
+.history-notes{margin-top:30px;border-top:1px solid var(--line)}.history-notes details{border-bottom:1px solid var(--line)}.history-notes summary{display:flex;align-items:center;justify-content:space-between;gap:20px;list-style:none;cursor:pointer;padding:20px 0;font-size:14px;font-weight:550}.history-notes summary::-webkit-details-marker{display:none}.history-notes summary svg{width:18px;height:18px;transition:transform .25s ease}.history-notes details[open] summary svg{transform:rotate(180deg)}.history-notes summary:focus-visible{outline:2px solid var(--green);outline-offset:4px}.history-copy{max-width:750px;padding:0 0 24px;font-size:14px;line-height:1.9;color:var(--muted)}.history-copy p{margin:0 0 12px}.history-copy p:last-child{margin-bottom:0}.history-copy strong{color:var(--fg);font-weight:550}
+.project-status{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:11px;line-height:1.6;margin-top:auto;padding-top:5px}.project-status::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}.project-status[data-state="调整中"],.project-status[data-state="重构中"]{color:#876423}[data-theme=dark] .project-status[data-state="调整中"],[data-theme=dark] .project-status[data-state="重构中"]{color:#ddbc7d}.person-copy p+p{margin-top:-14px}
+@media(max-width:480px){.intro h1{font-size:48px}.intro h1 span{font-size:16px}.project-list{grid-template-columns:1fr}.project{padding:20px 0}.project small{font-size:13px;line-height:1.85}.direction{min-height:0}.history-copy{font-size:13px}.milestone p{max-width:none}.tabs{gap:22px}.nav-right a[href="#people"]{display:none}}
+@media(prefers-reduced-motion:reduce){.history-notes summary svg{transition:none}}
+</style>
+<style>
+.language{display:flex;align-items:center;justify-content:center;gap:6px;min-width:58px;height:40px;padding:0 4px;border:0;background:none;font-size:13px;flex-shrink:0}.language svg{width:18px;height:18px}.language:hover{color:var(--green)}.language span{min-width:20px;text-align:center}.theme{flex-shrink:0;width:40px;height:40px}.nav-right{gap:22px}
+html[lang=en] .intro-bottom p,html[lang=en] .person-copy p{line-height:1.8}html[lang=en] .name-part small{overflow-wrap:anywhere}html[lang=en] .meta{gap:16px}html[lang=en] .meta a{gap:8px}html[lang=en] .contact h2{font-size:34px}
+@media(max-width:800px){.nav-right{gap:14px}html[lang=en] .nav-right a[href="#people"]{display:none}html[lang=en] .contact h2{font-size:28px}}
+@media(max-width:480px){.nav{gap:10px}.wordmark{gap:8px}.wordmark img{width:32px}.nav-right{gap:6px}.language{min-width:48px;gap:4px}.language svg{width:16px}.nav-right a{font-size:12px}.theme{width:36px}html[lang=en] .journey .milestone{grid-template-columns:1fr;gap:10px}html[lang=en] .milestone .number{grid-row:auto}html[lang=en] .milestone p{grid-column:1}html[lang=en] .contact h2{font-size:25px}html[lang=en] .intro-bottom h2{font-size:27px}html[lang=en] .name-part small{font-size:11px}}
+</style>
+</head>
+<body>
+<header><nav class="wrap nav" aria-label="主导航"><a class="wordmark" href="../index.html"><img src="../about/assets/zymct-mark.png" alt="">ZYMCT</a><div class="nav-right"><a href="#directions">探索方向</a><a href="#people">背后的人</a><a href="../index.html">返回官网</a><button class="language" type="button" aria-label="Switch to English" title="Switch to English"><i data-lucide="languages" aria-hidden="true"></i><span>EN</span></button><button class="theme" aria-label="切换为深色主题" title="切换主题"><i data-lucide="moon"></i></button></div></nav></header>
+<main>
+<div class="wrap"><section class="intro" aria-labelledby="page-title"><div class="eyebrow">关于我们 / ABOUT THE STUDIO</div><h1 id="page-title">致月云科技<span>ZYMCT · MoonCloud Technology</span></h1><div class="intro-bottom"><h2>有想法，<br>就让它发生。</h2><p>致月始于 2021 年，由一名学生创立。我们做过社区网站，在校园里办过摄影比赛，也与原学校志同道合的同学共同创立社团管理系统项目。如今，这里还多了文件转换、密码和影音工具。它们不全是同一种产品，但都是我们认真尝试过的事。</p></div><div class="meta"><span><i data-lucide="sprout"></i>始于 2021 · 持续探索</span><a href="#directions">往下认识我们<i data-lucide="arrow-down"></i></a></div></section></div>
+<section class="name-origin wrap" id="name-origin" aria-labelledby="name-origin-title">
+  <div class="name-origin-inner">
+    <div><h2 id="name-origin-title">ZYMCT，从名字说起。</h2><p class="origin-caption">一个名字，连接中文与最初的英文构想。</p></div>
+    <dl class="name-parts">
+      <div class="name-part"><dt>ZY</dt><dd><strong>致月</strong><small class="origin-desktop">取自「致月」的拼音首字母<br>Zhi · Yue</small><small class="origin-mobile">Zhi · Yue<br>拼音首字母</small></dd></div>
+      <div class="name-part"><dt>MC</dt><dd><strong>MoonCloud</strong><small class="origin-desktop">最初构想的英文名字<br>Moon（月）· Cloud（云）</small><small class="origin-mobile">月与云<br>最初的英文名</small></dd></div>
+      <div class="name-part"><dt>T</dt><dd><strong>Technology</strong><small>科技</small></dd></div>
+    </dl>
+    <p class="origin-note">ZY + MC + T，组成了今天的 ZYMCT。</p>
+  </div>
+</section>
+<section class="chapter exploration" id="directions"><div class="wrap"><div class="section-top"><div class="index"><b>01</b>探索方向</div><h2>网站、影像，<br><span>还有校园里的事。</span></h2></div><div class="tabs" role="tablist" aria-label="探索方向"><button role="tab" id="tab-digital" aria-selected="true" aria-controls="direction-panel" tabindex="0" data-direction="digital">数字产品</button><button role="tab" id="tab-creative" aria-selected="false" aria-controls="direction-panel" tabindex="-1" data-direction="creative">影像创作</button><button role="tab" id="tab-community" aria-selected="false" aria-controls="direction-panel" tabindex="-1" data-direction="community">校园与连接</button></div><div class="direction" role="tabpanel" id="direction-panel" aria-labelledby="tab-digital"><div class="direction-symbol" aria-hidden="true"><i data-lucide="blocks"></i></div><div class="direction-main"><p>社区是致月较早的项目之一：和享云智联一起做，从 1.0 走到 3.0 Beta，尝试过自研，也尝试过开源。如今，官网还收录了一些用途更具体的日常工具。</p><div class="project-list"><div class="project"><strong>致月社区</strong><small>互动交流与内容分享，经历多个版本迭代。</small></div><div class="project"><strong>FlowConvert 流转</strong><small>在线文件格式转换，关注转换体验与隐私处理。</small></div><div class="project"><strong>ZYMCT Key Safe</strong><small>面向日常密码使用的安全工具。</small></div><div class="project"><strong>ZYMCT Emby</strong><small>基于 Emby 的影音服务。</small></div></div></div></div></div></section>
+<section class="chapter" id="journey"><div class="wrap"><div class="section-top"><div class="index"><b>02</b>一路走来</div><h2>从 2021 年开始，<br><span>边做，边学。</span></h2></div><div class="journey"><article class="milestone"><span class="number">2021 / 成立</span><h3>学生创立的工作室。</h3><p>致月云科技成立。学习之外，网站、摄影和校园里的想法，也有了一个共同的名字。</p></article><article class="milestone"><span class="number">2023 / 社区</span><h3>和朋友一起做网站。</h3><p>4 月，与享云智联推出致月社区 1.0。此后的版本中，我们尝试过自研与开源，也重新思考过界面和运行成本。</p></article><article class="milestone"><span class="number">一路 / 至今</span><h3>不只有屏幕里的作品。</h3><p>摄影比赛走进校园，ZY校园连接同学，社团管理系统由我和原学校志同道合的同学共同创立，一直作为原学校的 CCA（兴趣社团）开展。现在，官网也汇集了文件转换、密码和影音工具。</p></article></div>
+<div class="history-notes" aria-label="项目回顾">
+  <details><summary>致月社区：从 1.0 到 3.0 Beta<i data-lucide="chevron-down" aria-hidden="true"></i></summary><div class="history-copy"><p><strong>2023 年 4 月</strong>，致月与享云智联推出社区 1.0，随后迭代至 1.5。<strong>同年 8 月</strong>，2.0 改为基于开源项目开发，以重新考虑开发、服务器成本和界面体验。</p><p>3.0 Beta 则尝试回到 1.0 的核心逻辑，结合 2.0 的经验重新设计。回顾文档注明该项目于 <strong>2024 年 7 月停止更新</strong>。</p></div></details>
+  <details><summary>暂停的项目，也留在这里<i data-lucide="chevron-down" aria-hidden="true"></i></summary><div class="history-copy"><p><strong>致月摄影大赛 MCTPC</strong> 曾在创始人学校举办 3 届、校外举办 1 届，目前暂停。校园比赛涵盖风光、人文、建筑等主题，往期活动已归档。</p><p><strong>ZY 创新型工作平台</strong> 曾围绕沟通、任务管理与文件协作进行规划，现已暂停开发更新。这里保留的是项目经历，并不意味着旧服务仍然开放。</p></div></details>
+</div></div></section>
+<section class="chapter" id="people"><div class="wrap"><div class="section-top"><div class="index"><b>03</b>背后的人</div><h2>从一个学生，<br><span>到和朋友一起做事。</span></h2></div><div class="people-grid"><figure class="portrait"><img src="../about/assets/creator-studio-white-web.jpg" width="1200" height="913" loading="lazy" alt="致月创始人的 Apple 风格头像，坐在电脑和相机旁挥手"></figure><div class="person-copy"><span class="small">THE PERSON BEHIND ZYMCT</span><h3>技术和摄影，<br>都是课业之外的热爱。</h3><p>创始人从学生时期开始做致月，也把摄影的兴趣带进了校园。写网站、拍照片、组织比赛，是这段经历里不同的日常。</p><p>不同项目有不同的同行者：致月社区与享云智联联合开发；社团管理系统 2Infinity 则由我和原学校志同道合的同学共同创立，一直是原学校的 CCA（兴趣社团），并非与享云智联共同创立。</p><a class="text-link" href="../about/index.html">认识作者<i data-lucide="arrow-up-right"></i></a></div></div><div class="collab"><span>从 2023 年的社区 1.0 开始，致月与享云智联一起开发社区，并保持资源共享与合作。</span><strong>EnjoyCloud · 享云智联</strong></div></div></section>
+<section class="contact"><div class="wrap"><div><small>KEEP IN TOUCH / 保持联系</small><h2>项目合作、使用反馈，<br>或者聊聊你的想法。</h2></div><a href="mailto:opzymct@outlook.com">opzymct@outlook.com<i data-lucide="arrow-up-right"></i></a></div></section>
+</main>
+<footer class="wrap footer"><strong>ZYMCT</strong><span>© 2026 ZYMCT · 愿世界和平</span><div><a href="../index.html">官网首页</a><a href="https://youtube.com/@mooncloudstudio" target="_blank" rel="noopener">YouTube</a><a href="https://x.com/zymct" target="_blank" rel="noopener">X</a></div></footer>
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<script src="./i18n.js"></script>
+<script>
+let currentLang='zh';try{currentLang=localStorage.getItem('zymct_lang')==='en'?'en':'zh'}catch{}
+const icons=()=>{if(window.lucide)lucide.createIcons()};icons();
+const directions={
+  digital:{icon:'blocks',text:'社区用来交流与分享，工具则围绕更具体的日常需要：文件转换、密码安全、影音体验。这些项目构成了致月在网页上的一部分。',items:[['致月社区','与享云智联联合开发的互动交流与内容分享平台。'],['FlowConvert 流转','在线文件格式转换，关注转换体验与隐私处理。'],['ZYMCT Key Safe','面向日常密码使用的安全工具。'],['ZYMCT Emby','基于 Emby 的影音服务。']]},
+  creative:{icon:'aperture',text:'摄影不只发生在网站上。我们拍摄生活，也把比赛带进校园：从风光、人文到建筑，让同学用自己的视角记录身边。',items:[['致月摄影工作室','记录生活中的场景与瞬间，是致月在影像创作上的尝试。'],['致月摄影大赛 MCTPC','曾在创始人学校举办 3 届、校外举办 1 届。']]},
+  community:{icon:'users',text:'ZY校园从学校出发，围绕摄影比赛、慈善公益和同学交流开展活动。社团管理系统 2Infinity 来自我与原学校同学共同开展的 CCA（兴趣社团），公益项目则由学生发起。',items:[['ZY校园工作室','摄影比赛、义卖与志愿服务，以及在校学生之间的交流。','https://s1ypspzguzb.feishu.cn/docx/GzmkduuFVooj2exK7Kmcu7f6nmc?from=from_parent_docx'],['2Infinity','与原学校志同道合的同学共同创立的社团管理系统项目，一直作为原学校的 CCA（兴趣社团）开展。'],['SPARK 青年公益','由 KCS 成都学生创立的非营利组织；网站服务器正在调整。']]}
+};
+const tabs=[...document.querySelectorAll('[role=tab]')],panel=document.getElementById('direction-panel');
+const projectStates={'致月摄影大赛 MCTPC':'已暂停 · 往期归档','2Infinity':'重构中','SPARK 青年公益':'调整中'};
+function selectTab(tab){
+  tabs.forEach(t=>{t.setAttribute('aria-selected',String(t===tab));t.tabIndex=t===tab?0:-1});
+  const d=directions[tab.dataset.direction];panel.setAttribute('aria-labelledby',tab.id);panel.replaceChildren();
+  const symbol=document.createElement('div');symbol.className='direction-symbol';symbol.setAttribute('aria-hidden','true');
+  const icon=document.createElement('i');icon.dataset.lucide=d.icon;symbol.append(icon);
+  const main=document.createElement('div');main.className='direction-main';
+  const english=currentLang==='en'?studioEnglish.directions[tab.dataset.direction]:null;
+  const p=document.createElement('p');p.textContent=english?english.text:d.text;main.append(p);
+  const list=document.createElement('div');list.className='project-list';
+  d.items.forEach(([name,desc,href],index)=>{
+    const [displayName,displayDesc]=english?english.items[index]:[name,desc];
+    const item=document.createElement(href?'a':'div');item.className=href?'project project-link':'project';
+    const strong=document.createElement('strong');strong.textContent=displayName;
+    if(href){
+      item.href=href;item.target='_blank';item.rel='noopener noreferrer';item.setAttribute('aria-label',currentLang==='en'?displayName+': read the introduction in Chinese (opens a new tab)':name+'：阅读简介（新标签页）');
+      const arrow=document.createElement('i');arrow.dataset.lucide='arrow-up-right';arrow.setAttribute('aria-hidden','true');strong.append(arrow);
+    }
+    const small=document.createElement('small');small.textContent=displayDesc;item.append(strong,small);
+    if(projectStates[name]){const status=document.createElement('span');status.className='project-status';status.dataset.state=projectStates[name];status.textContent=currentLang==='en'?studioEnglish.states[projectStates[name]]:projectStates[name];item.append(status)}
+    list.append(item);
+  });
+  main.append(list);panel.append(symbol,main);icons();
+}
+selectTab(tabs[0]);
+document.querySelectorAll('.history-notes details').forEach(detail=>{
+  const summary=detail.querySelector('summary');let motion=null;let expanded=false;
+  summary.addEventListener('click',event=>{
+    event.preventDefault();expanded=!expanded;
+    const start=detail.getBoundingClientRect().height;
+    if(motion){motion.cancel();motion=null}
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){detail.open=expanded;detail.style.overflow='';return}
+    detail.open=true;
+    const end=expanded?detail.getBoundingClientRect().height:summary.getBoundingClientRect().height;
+    detail.style.overflow='hidden';
+    motion=detail.animate([{height:start+'px'},{height:end+'px'}],{duration:expanded?360:260,easing:'cubic-bezier(.22,1,.36,1)'});
+    motion.onfinish=()=>{detail.open=expanded;detail.style.overflow='';motion=null};
+  });
+});
+tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>selectTab(tab));tab.addEventListener('keydown',e=>{let next;if(e.key==='ArrowRight')next=(i+1)%tabs.length;if(e.key==='ArrowLeft')next=(i+tabs.length-1)%tabs.length;if(e.key==='Home')next=0;if(e.key==='End')next=tabs.length-1;if(next!==undefined){e.preventDefault();tabs[next].focus();selectTab(tabs[next])}})});
+const themeButton=document.querySelector('.theme');
+function renderTheme(theme){
+  const dark=theme==='dark';
+  document.documentElement.dataset.theme=dark?'dark':'light';
+  document.querySelector('meta[name="theme-color"]').content=dark?'#171a17':'#ffffff';
+  const label=currentLang==='en'?(dark?'Switch to light theme':'Switch to dark theme'):(dark?'切换为浅色主题':'切换为深色主题');
+  themeButton.setAttribute('aria-label',label);themeButton.title=label;
+  themeButton.innerHTML='<i data-lucide="'+(dark?'sun':'moon')+'"></i>';icons();
+}
+renderTheme(document.documentElement.dataset.theme);
+themeButton.addEventListener('click',()=>{
+  const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
+  renderTheme(next);try{localStorage.setItem('zymct_theme_preference',next)}catch{}
+});
+window.addEventListener('storage',event=>{if(event.key==='zymct_theme_preference'||event.key===null)renderTheme(event.newValue==='dark'?'dark':'light')});
+const languageButton=document.querySelector('.language');
+const localizedContent=studioEnglish.content.map(([selector,en])=>{const element=document.querySelector(selector);return {element,en,zh:element.innerHTML}});
+const localizedAttributes=studioEnglish.attributes.map(([selector,attribute,en])=>{const element=document.querySelector(selector);return {element,attribute,en,zh:element.getAttribute(attribute)}});
+function applyLanguage(language){
+  currentLang=language==='en'?'en':'zh';
+  document.documentElement.lang=currentLang==='en'?'en':'zh-CN';
+  document.title=currentLang==='en'?'About ZYMCT · MoonCloud Technology':'关于致月 · ZYMCT';
+  localizedContent.forEach(({element,en,zh})=>{element.innerHTML=currentLang==='en'?en:zh});
+  localizedAttributes.forEach(({element,attribute,en,zh})=>{element.setAttribute(attribute,currentLang==='en'?en:zh)});
+  languageButton.querySelector('span').textContent=currentLang==='en'?'中':'EN';
+  const label=currentLang==='en'?'切换为中文':'Switch to English';
+  languageButton.setAttribute('aria-label',label);languageButton.title=label;
+  selectTab(tabs.find(tab=>tab.getAttribute('aria-selected')==='true')||tabs[0]);
+  renderTheme(document.documentElement.dataset.theme);
+}
+languageButton.addEventListener('click',()=>{applyLanguage(currentLang==='en'?'zh':'en');try{localStorage.setItem('zymct_lang',currentLang)}catch{}});
+window.addEventListener('storage',event=>{if(event.key==='zymct_lang'||event.key===null)applyLanguage(event.newValue==='en'?'en':'zh')});
+applyLanguage(currentLang);
+</script>
+</body></html>
